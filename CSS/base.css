@@ -1,0 +1,54 @@
+:root{
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+    --bgr-color: rgb(229, 115, 115);
+
+}
+
+*{
+    box-sizing: inherit;
+}
+
+html{
+     font-size: 62.5%;  /* tương đương 62.5% = 16px = 1.6 rem */
+     line-height: 1.6rem;
+     box-sizing: border-box;
+}
+
+.grid{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media only screen  and (max-width: 960px){
+    .grid{
+    max-width: 760px;
+    margin: 0 auto;
+    }
+
+@media only screen  and (max-width: 760px){
+    .grid{
+    max-width: 500px;
+    margin: 0 auto;
+    }
+}
+
+.grid__full-width{
+    width: 100%;
+}
+
+.grid__row{
+    display: flex;
+    flex-wrap: wrap;
+}
+/* Animation */
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+   
