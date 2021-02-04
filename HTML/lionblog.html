@@ -16,9 +16,19 @@
 
 </head>
 
-<style>
+<script>
+    const signUpButton = document.getElementById('signUp');
+    const signInButton = document.getElementById('signIn');
+    const container = document.getElementById('container');
 
-</style>
+    signUpButton.addEventListener('click', () => {
+        container.classList.add('right-panel-active');
+    });
+
+    signInButton.addEventListener('click', () => {
+        container.classList.remove('right-panel-active');
+    });
+</script>
 
 <body>
     <!-- Nội dung Thanh Tiêu Đề -->
@@ -108,15 +118,15 @@
                             </div>
 
                         </li>
-                        <li class="header__navbar-item">
+                        <li class="header__navbar-item navbar-item-bosss">
                             <a class="header__navbar-item-link" href="http://127.0.0.1:5500/ghiendalat/index.html">Du
                                 lịch <i class="header__navbar-item-fas fas fa-chevron-down"></i></a>
-                            <div class="header__navbar-item2">
+                            <div class="navbar-item2-header">
                                 <div class="header__navbar-item2-1b">
                                     <div class="thanh">
                                         <ul class="header__navbar-item2-list">
                                             <li
-                                                class="header__navbar-item2-item header__navbar-item2-item-acctive header__navbar-item2-chaua ">
+                                                class="header__navbar-item2-item header__navbar-item2-chaua ">
                                                 <a class=header__navbar-item2-link href="">
                                                     <span>Châu á</span>
                                                 </a>
@@ -313,12 +323,16 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="header__navbar-item">
-                            <a class="header__navbar-item-link" href="">Nghệ thuật <i
-                                    class="header__navbar-item-fas fas fa-chevron-down"></i>
-                                <div class="header__navbar-item header__navbar-item1-1c">
-
+                        <li class="header__navbar-item header__navbar-item-test">
+                            <a class="header__navbar-item-link" href="">Nghệ thuật
+                                <i class="header__navbar-item-fas fas fa-chevron-down"></i>
                             </a>
+                            <div class="header__navbar-item-boss">
+                                <div>
+                                    <p class="thanh__boss-text">công thanh</p>
+                                </div>
+                            </div>
+
                         </li>
                         <li class="header__navbar-item">
                             <a class="header__navbar-item-link" href="">Ăn uống <i
@@ -368,11 +382,9 @@
                         <li class="header__navbar-item"><a class="header__navbar-item-link" href=""><i
                                     class=" fab fas fa-search"></i></a></li>
                     </ul>
-
                 </nav>
             </div>
         </header>
-
         <div class="containerboss">
             <div class="grid">
                 <div class="container">
@@ -390,16 +402,16 @@
                                 <p class="lienhe_1">Liên hệ</p>
                             </a>
                         </div>
-                        <div class="grid__phanthan">
-                            <div class="">
-                                <ul class="grid__phanthan-list">
-                                    <li class="grid__phanthan-list-item">
+                        <div class="body__container">
+                            <div class="body__container-boss">
+                                <ul class="body__phanthan-list">
+                                    <li class="body__phanthan-list-item">
                                         <a href="">
                                             <h4>Giới Thiệu</h4>
                                             <img src="image/pexels-photo-1106468.jpeg" />
                                         </a>
                                     </li>
-                                    <li class="grid__phanthan-list-item">
+                                    <li class="body__phanthan-list-item">
                                         <a href="">
                                             <div>
                                                 <h4>Du lịch</h4>
@@ -407,7 +419,7 @@
                                             </div>
                                         </a>
                                     </li>
-                                    <li class="grid__phanthan-list-item">
+                                    <li class="body__phanthan-list-item">
                                         <a href="">
                                             <div>
                                                 <h4>Nghệ thuật</h4>
@@ -415,9 +427,7 @@
                                             </div>
                                         </a>
                                     </li>
-                                    <!-- </ul>
-                    <ul class="grid__phanthan-list"> -->
-                                    <li class="grid__phanthan-list-item">
+                                    <li class="body__phanthan-list-item">
                                         <a href="">
                                             <div>
                                                 <h4>Ăn uống</h4>
@@ -425,7 +435,7 @@
                                             </div>
                                         </a>
                                     </li>
-                                    <li class="grid__phanthan-list-item">
+                                    <li class="body__phanthan-list-item">
                                         <a href="">
                                             <div>
                                                 <h4>Ăn uống</h4>
@@ -433,7 +443,7 @@
                                             </div>
                                         </a>
                                     </li>
-                                    <li class="grid__phanthan-list-item">
+                                    <li class="body__phanthan-list-item">
                                         <a href="">
                                             <div>
                                                 <h4>Ăn uống</h4>
@@ -441,7 +451,7 @@
                                             </div>
                                         </a>
                                     </li>
-                                    <li class="grid__phanthan-list-item">
+                                    <li class="body__phanthan-list-item">
                                         <a href="">
                                             <div>
                                                 <h4>Mua sắm</h4>
@@ -449,7 +459,7 @@
                                             </div>
                                         </a>
                                     </li>
-                                    <li class="grid__phanthan-list-item">
+                                    <li class="body__phanthan-list-item">
                                         <a href="">
                                             <div>
                                                 <h4>Tài khoản</h4>
@@ -758,22 +768,22 @@
         </footer>
 
     </div>
-    <div class="modal">
+    <!-- <div class="modal">
         <div class="modal__overlay">
 
         </div>
         <div class="modal__body">
-            <div class="modal__inner">
-                <!-- Authen form -->
-                <div class="auth-form">
-                    <!-- <div class="auth-form__header">Sign in/up Form</div> -->
+            <div class="modal__inner"> -->
+    <!-- Authen form -->
+    <!-- <div class="auth-form">
                     <div class="auth-form__container" id="auth-form__container">
                         <div class="form-container sign-up-container">
                             <form class="form-container__form" action="#">
-                                <h1 class="form-container__h1" >Create Account</h1>
+                                <h1 class="form-container__h1">Create Account</h1>
                                 <div class="social-container">
                                     <a class="form-container__a social" href="#"><i class="fab fa-facebook-f"></i></a>
-                                    <a class="form-container__a social" href="#"><i class="fab fa-google-plus-g"></i></a>
+                                    <a class="form-container__a social" href="#"><i
+                                            class="fab fa-google-plus-g"></i></a>
                                     <a class="form-container__a social" href="#"><i class="fab fa-linkedin-in"></i></a>
                                 </div>
                                 <span class="form-container__span">or use your email for registration</span>
@@ -788,7 +798,8 @@
                                 <h1 class="form-container__h1">Sign in</h1>
                                 <div class="social-container">
                                     <a class="form-container__a social" href="#"><i class="fab fa-facebook-f"></i></a>
-                                    <a class="form-container__a social" href="#"><i class="fab fa-google-plus-g"></i></a>
+                                    <a class="form-container__a social" href="#"><i
+                                            class="fab fa-google-plus-g"></i></a>
                                     <a class="form-container__a social" href="#"><i class="fab fa-linkedin-in"></i></a>
                                 </div>
                                 <span class="form-container__span">or use your account</span>
@@ -798,25 +809,29 @@
                                 <button class="form-container__button">Sign In</button>
                             </form>
                         </div>
-                         <div class="overlay-container">
+                        <div class="overlay-container">
                             <div class="overlay">
                                 <div class="overlay-panel overlay-left">
                                     <h1 class="overlay-container__h1">Welcome Back!</h1>
-                                    <p class="overlay-container__text">To keep connected with us please login with your personal info</p>
-                                    <button class="form-container__button overlay-container__button-ghost" id="signIn">Sign In</button>
+                                    <p class="overlay-container__text">To keep connected with us please login with your
+                                        personal info</p>
+                                    <button class="form-container__button overlay-container__button-ghost"
+                                        id="signIn">Sign In</button>
                                 </div>
                                 <div class="overlay-panel overlay-right">
                                     <h1 class="overlay-container__h1">Hello, Friend!</h1>
-                                    <p class="overlay-container__text">Enter your personal details and start journey with us</p>
-                                    <button class="form-container__button overlay-container__button-ghost" id="signUp">Sign Up</button>
+                                    <p class="overlay-container__text">Enter your personal details and start journey
+                                        with us</p>
+                                    <button class="form-container__button overlay-container__button-ghost"
+                                        id="signUp">Sign Up</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
-            </div>
-        </div>
+    </div>
+    </div>
     </div>
 
 </body>

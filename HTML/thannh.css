@@ -214,9 +214,7 @@ input {
 }
 
 .social-container {
-    background: #FF416C;
-    background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
-    background: linear-gradient(to right, #FF4B2B, #FF416C);
+    
     margin: 20px 0;
 }
 
