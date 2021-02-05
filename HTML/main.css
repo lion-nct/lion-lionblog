@@ -319,10 +319,47 @@ boby {
   display: block;
   padding: 10px;
   width: 25%;
+  height: 210px;
+  
 }
 .body__phanthan-list-item img {
   width: 100%;
-  height: auto;
+  height: 100%;
+}
+
+.phanthan-list-span{
+  position: absolute;
+  background: rgb(15, 26, 173);
+}
+
+.span-ngang{
+  position: absolute;
+  width: 80%;
+  
+}
+.span-ngang-top{
+  height: 1px;
+  left: 28px;
+  top: 20px;
+}
+.span-ngang-bottom{
+  height: 1px;
+  left: 28px;
+  bottom: 20px;
+}
+.span-doc{
+  position: absolute;
+  height: 80%;
+}
+.doc-left{
+  width: 1px;
+  left: 28px;
+  top: 20px;
+}
+.doc-right{
+  width: 1px;
+  right: 31px;
+  top: 20px;
 }
 
 h4 {
@@ -455,12 +492,65 @@ input[type="submit"] {
   padding: 10px 0;
   outline: none;
   cursor: pointer;
-  background-color: rgb(245, 245, 245, 0.8);
+  background-color: rgba(226, 226, 226, 0.8);
   font-family: Crimson Text;
 }
 input[type="submit"]:hover {
   background-color: rgb(229, 115, 115);
   color: white;
+}
+
+.tinnoibat{
+  
+}
+.tinnoibat_container{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 22px;
+  width: 100%;
+  height: 360px;
+ 
+}
+
+.tinnoibat_container-img{
+  height: 100%;
+  width: 100%;
+}
+
+.tinnoibat_container-text{
+  position: absolute;
+  color: white;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  
+}
+.theloai-container{
+  text-align: left;
+}
+.theloai-list{
+  margin: ;
+  padding: 10px 0px;
+  font-size: 1.6rem;
+  border-bottom: 1px solid rgb(211, 211, 211);
+}
+.theloai-list-fas,
+.theloai-item-fas{
+  padding-right: 4px;
+}
+.theloai-list-fas{
+ font-size: 1.2rem;
+}
+.theloai-item-fas{
+  font-size: 1rem;
+  
+}
+.theloai-item{
+  list-style: none;
+  padding: 10px 30px;
+  font-size: 1.5rem;
+  border-bottom: 1px solid rgb(211, 211, 211);
 }
 
 .phanthanphai-h3 {
