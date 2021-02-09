@@ -316,7 +316,10 @@ boby {
 
 .body__phanthan-list-item { 
   position: relative;
-  display: block;
+  overflow: hidden;
+  display: flex;
+  justify-self: center;
+  align-items: center;
   padding: 10px;
   width: 25%;
   height: 210px;
@@ -329,7 +332,8 @@ boby {
 
 .phanthan-list-span{
   position: absolute;
-  background: rgb(15, 26, 173);
+  background: rgb(255, 255, 255);
+  transition: 0.6s;
 }
 
 .span-ngang{
@@ -341,11 +345,13 @@ boby {
   height: 1px;
   left: 28px;
   top: 20px;
+  transform: translateX(400px);
 }
 .span-ngang-bottom{
   height: 1px;
   left: 28px;
   bottom: 20px;
+  transform: translateX(-400px);
 }
 .span-doc{
   position: absolute;
@@ -355,22 +361,34 @@ boby {
   width: 1px;
   left: 28px;
   top: 20px;
+  transform: translateY(-400px);
 }
 .doc-right{
   width: 1px;
   right: 31px;
   top: 20px;
+  transform: translateY(400px);
+}
+.body__phanthan-list-item:hover .doc-left{
+  transform: translateY(0px);
+}
+.body__phanthan-list-item:hover .doc-right{
+  transform: translateY(0px);
+}
+.body__phanthan-list-item:hover .span-ngang-top{
+  transform: translateX(0px);
+}
+.body__phanthan-list-item:hover .span-ngang-bottom{
+  transform: translateX(0px);
 }
 
-h4 {
+.phanthan-list-h4{
   text-transform: uppercase;
   font-family: "Helvetica Neue";
   border-radius: 50px;
   margin: auto;
   padding: 15px;
   background-color: rgba(68, 59, 59, 0.6);
-  position: absolute;
-  text-align: center;
   min-width: 35%;
   position: absolute;
   top: 50%;
@@ -517,6 +535,7 @@ input[type="submit"]:hover {
 .tinnoibat_container-img{
   height: 100%;
   width: 100%;
+  object-fit: cover;
 }
 
 .tinnoibat_container-text{
@@ -635,8 +654,9 @@ input[type="submit"]:hover {
   height: 194px;
 }
 .footer_first_img {
-  width: 100%;
-  object-fit: contain;
+  width: 190px;
+  height: 190px;
+  object-fit: cover;
 }
 
 .footer_first li > a {
