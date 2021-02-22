@@ -544,7 +544,181 @@ var newArray = thanh33.reduce(function(a,b){
 }, [])
 console.log(newArray)
 
+// INCLUDES : phương thức tồn tại có trong String và Array
+var thanh34 = 'tôi tên là Nguyễn Công Thành'
+console.log(thanh34.includes('tên', 1)) 
+// truyền vào 2 giá trị include('từ khóa tìm kiếm', vị trí bắt đầu tìm kiếm)
 
+var thanh35 = ['Tên','Nguyễn','Công','Thành']
+console.log(thanh35.includes('Nguyễn',3))
+
+//MATH ONBJECT
+
+console.log(Math.PI)
+console.log(Math.round(1.8)) // làm tròn số
+console.log(Math.abs(-9)) // giá trị tuyệt đối
+console.log(Math.ceil(4.000001)) // làm tròn trên
+console.log(Math.floor(10.1)) // làm tròn dưới
+console.log(Math.min(-100,50,56,85,6,8))
+console.log(Math.max(-100,50,56,85,6,8))
+
+var random = Math.floor(Math.random() * 10) // tạo ra số, tên ngẫu nhiên
+var bonus = [
+    '10 coin',
+    '20 coin',
+    '30 coin',
+    '40 coin',
+    '50 coin'
+]
+console.log(bonus[random])
+
+var random1 = Math.ceil(Math.random() * 100) // kết hợp với Math.ceil hoặc Math.floor để làm tròn số
+if (random1 < 10){
+    console.log('Cường hóa đồ thành công!')
+} else{
+    console.log('Cường hóa thất bại!')
+}
+
+
+// CALLBACK
+function myFunction(thanh36){
+    console.log(thanh36)
+}
+myFunction('Nguyễn Công Thành') // truyền vào đối tượng gì thì in ra kiểu đó number,array,...
+
+
+function myFunction(thanh37){
+    if(typeof thanh37 === 'function'){ // phải ktra là function thì mới thực thi
+        thanh37('Học lập trình')
+    }
+}
+function myCallback(value){
+    console.log('Value: ',value)
+}
+myFunction(myCallback)
+
+
+// tự tạo ra 1 function mới theo ý
+Array.prototype.map2 = function(callback){  // có trường hợp phải check callback có phải là function hay không
+    var output = []
+    var arrayLength = this.length // this ở đây chính là mảng language
+    for (var i = 0; i < arrayLength; ++i){
+        // bắt buộc gọi lại function và phải truyền tham số vào nếu không sẽ trả về underfined
+       var result = callback(this[i], i); //this[i] là mảng language và chính là course ở map2, i là chỉ mục chạy ở vòng for và chính là index ở map2
+       output.push(result); 
+    }
+    return output;
+}
+var language = [
+    'Javascript',
+    'HTML',
+    'CSS',
+    'Ruby'
+];
+var htmls = language.map2(function(course,index){ // truyền vào function ở đây để gọi function callback ở trên
+    //console.log(index, course)
+    return `<h2>${course}</h2>` // return ở đây sẽ trả kết quả ở result
+});
+console.log(htmls.join('\n'));
+
+
+// dùng function map có sẵn
+var htmls2 = language.map(function(course2,index){
+    return `<h2>${course2}</h2>`
+})
+console.log(htmls2.join('\n'));
+
+// PHẦN TỪ GIẢ CỦA ARRAY
+var course = new Array(10); // truyền vào 1 giá trị thì là độ dài của mảng
+course.push('Công','Thành')
+console.log(course)
+// var course = new Array(10,15); truyền vào 2 giá trị trở lên thì là element của mảng
+
+var course = [
+    'Javascript',
+    'PHP',
+    'Python',
+    'Ruby'
+];
+course.length = 10;
+// lặp tất cả các phần tử thật và giả
+for (var i = 0; i < course.length; i++){
+    console.log(course[i]);
+}
+
+// chỉ lặp các phần từ thật có trong array
+for (var phantuthat in course){
+    if (this.hasOwnProperty(phantuthat)){ // không lọc và in ra các element trong prototype
+        console.log(course[phantuthat]);
+    }
+}
+
+// forEach, find, filter, some, every
+Array.prototype.forEach2 = function(callback){
+    for (var thanh38 in this){ // for in sẽ duyệt qua tất cả element ở mảng và element trong prototype luôn
+        if (this.hasOwnProperty(thanh38)){
+            callback(this[thanh38], thanh38, this)
+        }
+    }
+}
+
+var language = [
+    'English',
+    'Japan',
+    'VietNam',
+    'China'
+]
+// tạo 1 forEach mới
+language.forEach2(function(value,index,array){
+    console.log(index,value,array)
+})
+
+
+language.forEach(function(value,index,array){
+    console.log(index,value,array);
+})
+
+// FILTER
+Array.prototype.filter2 = function(callback){
+    var output = []
+    for (var thanh39 in this){
+        if (this.hasOwnProperty(thanh39)){
+            var result = callback(this[thanh39], thanh39, this)
+            if (result){
+                output.push(this[thanh39])
+            }
+        } 
+    }
+    return output
+}
+
+var language = [
+    {
+        name: 'Javascript',
+        coin: 680
+    },
+    {
+        name: 'PHP',
+        coin: 860
+    },
+    {
+        name: 'Ruby',
+        coin: 980
+    }
+];
+
+// tự tạo 1 filter mới
+var filter2Coin = language.filter2(function(value,index,array){
+    return value.coin > 700
+})
+console.log(filter2Coin);
+
+
+// filter có sẵn
+var filterCoin = language.filter(function(value,index,array){
+    return value.coin > 700
+})
+console.log(filterCoin);
 
 
 
