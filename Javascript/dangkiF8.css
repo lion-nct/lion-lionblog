@@ -1,0 +1,45 @@
+
+
+body{
+    margin: 0 auto;
+    width: 1000px;
+    height: auto;
+}
+
+h3{
+    font-size: 40px;
+}
+input{
+    display: block;
+    margin: 0 auto;
+    height: 30px;
+    width: 300px;
+}
+
+input:{
+    border-color: aqua;
+}
+button{
+    height: 35px;
+    width: 300px;
+    background-color: rgb(165, 230, 241);
+    margin-bottom: 50px;
+    border: none;
+    border-radius: 10px;
+}
+
+
+.main{
+ width: 800px;
+ height:auto;
+ margin: 0 auto;
+ background-color: aliceblue;
+ text-align: center;
+}
+
+.form-group{
+    margin-bottom: 30px;
+}
+.form-label{
+    display: block;
+}

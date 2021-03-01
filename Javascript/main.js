@@ -720,6 +720,321 @@ var filterCoin = language.filter(function(value,index,array){
 })
 console.log(filterCoin);
 
+//SOME 
+Array.prototype.some2 = function(callback){
+    for (var index in this){
+        if(this.hasOwnProperty(index)){
+            var result = callback(this[index], index, this)
+            if (result){ // nêú kết quả mà thỏa mãn thì return ra true luôn
+                return true 
+            }
+        }
+    }
+    return false // còn nếu tất cả không thỏa mãn thì return false ở đây
+    
+}
+var language = [
+    {
+        name: 'Javascript',
+        coin: 680,
+        isFinish: true
+    },
+    {
+        name: 'PHP',
+        coin: 860,
+        isFinish: false
+    },
+    {
+        name: 'Ruby',
+        coin: 980,
+        isFinish: false
+    }
+];
+// tự tạo some mới
+var result2 = language.some2(function(value,index,array){
+    return value.isFinish === true
+})
+console.log(result2)
+
+
+//some có sẵn
+var result = language.some(function(value,index,array){
+    return value.isFinish === true 
+})
+console.log(result);
+
+// EVERY (ngược với SOME)
+Array.prototype.every2 = function(callback){
+    var output = true
+
+    for (var index in this){
+        if (this.hasOwnProperty(index)){
+            var result = callback(this[index], index, this)
+                if (!result){
+                    output = false;
+                    break;
+                }           
+        }
+    }
+    return output
+   
+}
+
+var language = [
+    {
+        name: 'Javascript',
+        coin: 680,
+        isFinish: true
+    },
+    {
+        name: 'PHP',
+        coin: 860,
+        isFinish: false
+    },
+    {
+        name: 'Ruby',
+        coin: 980,
+        isFinish: false
+    }
+];
+var result2 = language.every2(function(value,index,array){
+    return value.isFinish
+})
+console.log(result2)
+
+
+var result = language.every(function(value,index,array){
+    return value.isFinish // viết thêm  === true cũng đc, không viết thì mặc định là true
+})
+console.log(result)
+
+
+// GET ELEMENT
+document.getElementById('tên ID')
+document.getElementsByClassName('tên Class') // trả về 1 mảng nhiều đối tượng bên trong, select qua tên class
+document.getElementsByTagName('tên thẻ') // trả về 1 mảng nhiều đối tượng bên trong, select qua tên thẻ
+document.querySelector('.thẻ cha .thẻcầnlấy ') //chỉ lấy ra 1 element  
+document.querySelectorAll('.thẻcầnlấy') // lấy ra tất cả các element 
+
+// DOM ATTRIBUTE
+var headingElement = document.querySelector('h1')
+var headingElement2 = document.querySelector('h2')
+
+headingElement2.title = 'thanh39'
+headingElement.setAttribute('href','thanh40')  //đối số thứ 1 tên Attribut muốn set, thứ 2 giá trị Attribute muốn set 
+headingElement.setAttribute('data','thanh41') // tự set Attribute vào Element
+document.querySelector('h1').title = 'Học lập trình tại F8'; // môt cách viết nhanh khác
+
+console.log(headingElement.getAttribute('data')) // lấy Attribute tự set
+console.log(headingElement2.title) // lấy Attribute hợp lí đc set sẵn
+
+var headingElement3 = document.querySelector('h3')
+headingElement3.className = 'headingh3'
+
+// innerText : là thuộc tính của Element Node
+var headingElement = document.querySelector('.heading')
+headingElement.innerText = 'Nội dung tên đã được sửa'
+
+// textContent: lấy nguyên bản những Text Node có trong Element Node
+
+
+// innerHTML : có thể thêm Element node, Attribute node, Text node vào Element 
+var boxElement = document.querySelector('.classheading')
+boxElement.innerHTML = '<h1 title = "heading">Công Thành</h1>' // thêm vào trong thẻ div .classheading và thay thế các thẻ có sẵn
+console.log(boxElement.innerHTML)
+
+var boxElement2 = document.querySelector('.classheading2')
+boxElement2.outerHTML = '<h1 title = "heading">Tôi tên là Thành </h1>' // thay thế ngay tại thẻ div.classheading2
+
+// DOM CSS
+var boxElement3 = document.querySelector('.thanh1')
+var boxElement4 = document.querySelector('.thanh2')
+
+// cách viết 1
+boxElement3.style.width = '100px'
+boxElement3.style.height = '50px'
+boxElement3.style.backgroundColor = 'green'
+
+// cách viết 2 gọn hơn
+//assign nhận nhiều đối số. Đối số thứ 1 truyền Object. Đối số thứ 2 Object muốn được hợp nhấtcho Object thứ 1
+Object.assign(boxElement4.style,{
+    width: '100px',
+    height: '50px',
+    backgroundColor: 'red'
+})
+
+//ClassList (add,contains,remove,toggle)
+var boxElement5 = document.querySelector('.thanh3')
+var boxElement6 = document.querySelector('.thanh5')
+var boxElement7 = document.querySelector('.thanh6')
+
+boxElement5.classList.add('red','blue') // add 1 hoặc nhiều class mới vào
+
+console.log(boxElement5.classList.contains('black'))
+console.log(boxElement5.classList.contains('white'))
+
+setTimeout(() => {
+    boxElement5.classList.remove('blue')
+},4000)
+setTimeout(() =>{
+    boxElement6.classList.remove('green')
+},3000)
+
+// toggle nếu có class thì nó sẽ bỏ đi, nếu không có class đó thì nó sẽ thêm vào
+setInterval(() => {
+    boxElement7.classList.toggle('pink')
+},500)
+
+// một vài thuộc tính khac cho classList
+console.log(boxElement5.classList[1])
+console.log(boxElement5.classList.length)
+console.log(boxElement5.classList.value) // trả về string (tất cả gì có trong class kể cả dấu cách)
+
+// DOM event
+// 1. Attribute event (thường ít sử dụng vì viết inline nên phức tạp)
+
+// Assign event using the element node
+var boxElement8 = document.querySelector('.thanh7')
+boxElement8.onclick = function (e){ // e viết tắt của event
+    console.log(e.target)
+}
+
+
+var boxElement9 = document.querySelectorAll('h2') // nếu đặt h2 thì tất cả elenment h2 trên trang web đều bị add thuộc tínhtính, hoặc có thể đặt theo từng class riêng
+// boxElement9 là nodelist giống array nên dùng vòng lặp for
+for (var i = 0; i < boxElement9.length; ++i){
+    boxElement9[i].onclick = function (e){
+        console.log(e.target) // target trả về chính element mình clck
+    }
+}
+
+// Input/Select
+var inputValue;
+
+var inputElement = document.querySelector('input[type="text1"] ')
+var inputElement2 = document.querySelector('input[type="text2"] ')
+var inputElement3 = document.querySelector('input[type="checkbox"] ')
+var inputElement4 = document.querySelector('select')
+var inputElement5 = document.querySelector('input[type="text3"] ')
+// onchange in ra khi gõ xong và click ra ngoài input
+inputElement.onchange = function (e) {
+    console.log(e.target.value)
+}
+// oninput gõ đến đâu in ra đến đấy
+inputElement2.oninput = function (e) {
+    console.log(e.target.value)
+
+    // lưu dữ liệu input vào biến
+    inputValue = e.target.value
+}
+
+inputElement3.onchange = function (e) {
+    console.log(e.target.checked) //checkbox thì dùng checked sẽ trả về check = true && không check = false
+}
+
+inputElement4.onchange = function (e) {
+    console.log(e.target.value)
+}
+
+// chỉ which ở thẻ input
+inputElement5.onkeyup = function (e) {
+    console.log(e.which)
+    switch(e.which){
+        case 27: // là vị trí nút ESC đc which ra
+            console.log('Exit tại input')
+            break
+    }
+}
+// which tất cả document
+document.onkeydown = function (e) {
+    switch(e.which){
+        case 27:
+            console.log('Exit tại document')
+            break
+        case 13:
+            console.log('Send Chat')
+            break
+    }
+}
+
+
+// preventDefault: loại bỏ một hành vi mặc định của trình duyệt trên một thẻ HTML
+
+// 3 cách đều
+var aElement = document.links; // lấy tất cả các thẻ a
+// var aElement = document.anchors; // lấy ra các thẻ a có name
+// var aElement = document.querySelector('a')
+for (var i = 0; i < aElement.length; ++i){
+    aElement[i].onclick = function (e){
+
+        //khi ! & href http://127.0.0.1:2/HTML/lionblog.html thì cho chuyển trang và ngược lại
+        if (!e.target.href.startsWith('http://127.0.0.1:2/HTML/lionblog.html')){
+            e.preventDefault(); 
+        }
+    }
+}
+
+
+var ulElement = document.querySelector('ul')
+// sẽ click chuột xuống đc vào các phần tử khi focus input mà không mất
+ulElement.onmousedown = function (e){
+    e.preventDefault();
+}
+ulElement.onclick = function (e){
+    console.log(e.target)
+}
+
+
+// stopPropagation: loại bỏ 1 sự kiện nổi bọt
+document.querySelector('.thanh9').onclick = function (e){
+    console.log('DIV')
+}
+document.querySelector('.thanh10').onclick = function (e){
+    e.stopPropagation(); // click thẻ button sẽ không in luôn cả thẻ cha bên ngoài nữa
+    console.log('Click Me!')
+}
+
+//DOM Event: sử dụng khi cHỈ có nhu cầu lắng nghe
+var domElement = document.querySelector('.thanh11');
+
+// phần add lắng nghe - và chỉ thực hiện đc 3s đầu
+    domElement.onclick = function(){
+        console.log('lần 1')
+        console.log('lần 2')
+        alert('lần 3')
+    }
+//hủy bỏ lắng nghe - sau 3s
+setTimeout(function () {
+    domElement.onclick = function(){} // ghi đè lên phần code trên bằng cách truyền vào 1 function trống
+},3000)
+
+
+// EventListener: sử dụng khi có nhu cầu HỦY BỎ 1 sự kiện nào đó
+var domElement2 = document.querySelector('.thanh12');
+
+// addEventListener nhận 2 đối số (đối số 1: eventname loại bỏ chữ <on>, đối số 2: truyền 1 Function(callback))
+// domElement2.addEventListener('click', function(e) {
+
+// })
+
+function viec1(){
+    console.log('viec1-a')
+    console.log('viec1-b')
+}
+function viec2(){
+    console.log('viec2-c')
+    console.log('viec2-d')
+}
+
+domElement2.addEventListener('click',viec1);
+domElement2.addEventListener('click',viec2);
+
+
+setTimeout(function() {
+    domElement2.removeEventListener('click', viec1)
+},3000)
+
+
 
 
 
