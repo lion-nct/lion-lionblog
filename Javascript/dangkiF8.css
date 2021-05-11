@@ -1,9 +1,11 @@
 
+  
 
 body{
     margin: 0 auto;
-    width: 1000px;
+    width: 800px;
     height: auto;
+    text-align: left;
 }
 
 h3{
@@ -15,10 +17,24 @@ input{
     height: 30px;
     width: 300px;
 }
-
-input:{
-    border-color: aqua;
+input[type="text"]{
+    outline: none;
 }
+input[type="text"]:focus{
+    border: 2px solid rgb(0, 0, 0);
+}
+.form-label{
+    color:black;
+}
+
+.invalid{
+    color: red;
+}
+.invalid > .inputcolor{
+    color: red;
+    border: 2px solid rgb(255, 7, 7);
+}
+
 button{
     height: 35px;
     width: 300px;
@@ -27,12 +43,19 @@ button{
     border: none;
     border-radius: 10px;
 }
-
-
+@media only screen and (min-width: 800px) and (max-width: 1200px) {
+    .main {
+        width: 100%;
+    }
+  }
+@media only screen and (min-width: 200px) and (max-width: 600px) {
+    .main {
+        width: 100%;
+  }
+}
 .main{
- width: 800px;
+ width: 500px;
  height:auto;
- margin: 0 auto;
  background-color: aliceblue;
  text-align: center;
 }
