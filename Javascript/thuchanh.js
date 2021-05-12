@@ -714,12 +714,12 @@ console.log(result);
 
 // EVERY (ngược với SOME)
 Array.prototype.every2 = function (callback) {
-  var output = true;
+  var output = true; // kết quả cuối cùng trả về
 
   for (var index in this) {
     if (this.hasOwnProperty(index)) {
       var result = callback(this[index], index, this);
-      if (!result) {
+      if (!result) { // nếu 1 lần sai thì trả về false luôn
         output = false;
         break;
       }
@@ -756,11 +756,17 @@ var result = language.every(function (value, index, array) {
 console.log(result);
 
 // GET ELEMENT
+
+// lấy từ document
 document.getElementById("tên ID");
 document.getElementsByClassName("tên Class"); // trả về 1 mảng nhiều đối tượng bên trong, select qua tên class
 document.getElementsByTagName("tên thẻ"); // trả về 1 mảng nhiều đối tượng bên trong, select qua tên thẻ
-document.querySelector(".thẻ cha .thẻcầnlấy "); //chỉ lấy ra 1 element
-document.querySelectorAll(".thẻcầnlấy"); // lấy ra tất cả các element
+document.querySelector(".thẻcha .thẻcầnlấy "); //chỉ lấy ra 1 element
+document.querySelectorAll(".thẻcha .thẻcầnlấy"); // lấy ra tất cả các element
+
+// một số cách lấy khác
+// var thechamuonlay = document.querySelector(" .thẻ cần lấy")
+// thechamuonlay.querySelector(" .các con của thẻ trên")
 
 // DOM ATTRIBUTE
 var headingElement = document.querySelector("h1");
@@ -778,19 +784,25 @@ var headingElement3 = document.querySelector("h3");
 headingElement3.className = "headingh3";
 
 // innerText : là thuộc tính của Element Node
+// lấy ra text node được viết y chang trên trình duyệt
+// một số trường hợp được css ẩn đi text thì innerText lấy ra phần TEXT đã ẩn như trên trình duyệt
+// ngược lại với textContent
 var headingElement = document.querySelector(".heading");
 headingElement.innerText = "Nội dung tên đã được sửa";
 console.log(headingElement);
 
-// textContent: lấy nguyên bản những Text Node có trong Element Node
+// textContent: lấy nguyên bản những Text Node có trong Element Node (trong text node viết như thế nào thì bỏ qua các thẻ và lấy ra giống như vậy)
+// textContent có thể lấy ra các code css viết trong thẻ đó
+
 
 // innerHTML : có thể thêm Element node, Attribute node, Text node vào Element
 var boxElement = document.querySelector(".classheading");
-boxElement.innerHTML = '<h1 title = "heading">Công Thành</h1>'; // thêm vào trong thẻ div .classheading và thay thế các thẻ có sẵn
+boxElement.innerHTML = '<h1 title = "heading"> innerHTML Thay thế các thẻ bên trong thẻ div cha</h1>'; // thêm vào trong thẻ div .classheading và thay thế các thẻ có sẵn
 console.log(boxElement.innerHTML);
 
+// outerHTML : thay thế thẻ mới tại chính thẻ đã querySelector
 var boxElement2 = document.querySelector(".classheading2");
-boxElement2.outerHTML = '<h1 title = "heading">Tôi tên là Thành </h1>'; // thay thế ngay tại thẻ div.classheading2
+boxElement2.outerHTML = '<h1 title = "heading"> outerHTML thay thế tại thẻ cha đã querySelector</h1>'; // thay thế ngay tại thẻ div.classheading2
 
 // DOM CSS
 var boxElement3 = document.querySelector(".thanh1");
