@@ -48,3 +48,5 @@ var result = numbers.reduce(function(a,b){
 },0);
 
 console.log(result);
+
+

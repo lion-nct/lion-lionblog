@@ -363,7 +363,6 @@ myArray.forEach(function (thanh24, index) {
   console.log(index, thanh24);
 });
 
-
 // every: dùng để kiểm tra tất cả điều kiện trong mảng và phải thỏa mãn 1 điều kiện gì đó
 // every sẽ kiểm tra từng điều kiện nếu điều kiện sai sẽ không chạy
 // và không ktra điều kiện tiếp theo mà in ra luôn
@@ -431,7 +430,6 @@ var course = [
   },
 ];
 
-
 // MAP : dùng để chỉnh sửa hoặc thay đổi các element của một array
 // đối với map: nếu viết gì trong return thì sẽ in ra cái đó
 var newCourses = course.map(function (thanh29) {
@@ -444,7 +442,7 @@ var newCourses = course.map(function (thanh29) {
 console.log(newCourses);
 
 // REDUCED : dùng khi muốn nhận về một giá trị duy nhất (vd: nhận về tổng số coin như bên dưới)
-// reduce sẽ nhận 2 đối số truyển vào(function, giá trị khởi tạo) 
+// reduce sẽ nhận 2 đối số truyển vào(function, giá trị khởi tạo)
 // trong function truyền vào 4 tham số (bienluutru,giatrihientai,chimuccuagiatrihientai, array gốc)
 // accumulator sẽ được gán = với giá trị khởi tạo trong lần chạy đầu tiên
 
@@ -468,7 +466,7 @@ function thanh30(accumulator, currentValue, currentIndex, originArray) {
 var thanh32 = course.reduce(thanh30, 0);
 // thanh30 là 1 function nhưng viết cách khác
 // giá trị khởi tạo 0(number) sẽ được gán cho accumulator(bienluutru) và có giá trị đó luôn, trong lần chạy đầu tiên
-// giá trị khởi tạo có thể là bất cứ kiểu dữ liệu gì ví dụ : array,.... 
+// giá trị khởi tạo có thể là bất cứ kiểu dữ liệu gì ví dụ : array,....
 console.log("Tổng số coin của khóa học: ", thanh32);
 
 // Flat (làm phẳng mảng) từ Depth array (mảng sâu)
@@ -519,7 +517,7 @@ console.log(newArray);
 var thanh34 = "tôi tên là Nguyễn Công Thành";
 console.log(thanh34.includes("tên", 1));
 // truyền vào 2 giá trị include('từ khóa tìm kiếm', vị trí bắt đầu tìm kiếm)
- 
+
 var thanh35 = ["Tên", "Nguyễn", "Công", "Thành"];
 console.log(thanh35.includes("Nguyễn", 3));
 
@@ -719,7 +717,8 @@ Array.prototype.every2 = function (callback) {
   for (var index in this) {
     if (this.hasOwnProperty(index)) {
       var result = callback(this[index], index, this);
-      if (!result) { // nếu 1 lần sai thì trả về false luôn
+      if (!result) {
+        // nếu 1 lần sai thì trả về false luôn
         output = false;
         break;
       }
@@ -794,15 +793,16 @@ console.log(headingElement);
 // textContent: lấy nguyên bản những Text Node có trong Element Node (trong text node viết như thế nào thì bỏ qua các thẻ và lấy ra giống như vậy)
 // textContent có thể lấy ra các code css viết trong thẻ đó
 
-
 // innerHTML : có thể thêm Element node, Attribute node, Text node vào Element
 var boxElement = document.querySelector(".classheading");
-boxElement.innerHTML = '<h1 title = "heading"> innerHTML Thay thế các thẻ bên trong thẻ div cha</h1>'; // thêm vào trong thẻ div .classheading và thay thế các thẻ có sẵn
+boxElement.innerHTML =
+  '<h1 title = "heading"> innerHTML Thay thế các thẻ bên trong thẻ div cha</h1>'; // thêm vào trong thẻ div .classheading và thay thế các thẻ có sẵn
 console.log(boxElement.innerHTML);
 
 // outerHTML : thay thế thẻ mới tại chính thẻ đã querySelector
 var boxElement2 = document.querySelector(".classheading2");
-boxElement2.outerHTML = '<h1 title = "heading"> outerHTML thay thế tại thẻ cha đã querySelector</h1>'; // thay thế ngay tại thẻ div.classheading2
+boxElement2.outerHTML =
+  '<h1 title = "heading"> outerHTML thay thế tại thẻ cha đã querySelector</h1>'; // thay thế ngay tại thẻ div.classheading2
 
 // DOM CSS
 var boxElement3 = document.querySelector(".thanh1");
@@ -814,21 +814,21 @@ boxElement3.style.height = "50px";
 boxElement3.style.backgroundColor = "green";
 
 // cách viết 2 gọn hơn
-//assign nhận nhiều đối số. Đối số thứ 1 truyền Object. Đối số thứ 2 Object muốn được hợp nhấtcho Object thứ 1
+//assign nhận nhiều đối số. Đối số thứ 1 truyền Object. Đối số thứ 2 Object muốn được hợp nhất cho Object thứ 1
 Object.assign(boxElement4.style, {
   width: "100px",
   height: "50px",
   backgroundColor: "red",
 });
 
-//ClassList (add,contains,remove,toggle)
+//ClassList (add,contains,remove,toggle) 4  đối tượng thường sử dụng nhất
 var boxElement5 = document.querySelector(".thanh3");
 var boxElement6 = document.querySelector(".thanh5");
 var boxElement7 = document.querySelector(".thanh6");
 
 boxElement5.classList.add("red", "blue"); // add 1 hoặc nhiều class mới vào
 
-console.log(boxElement5.classList.contains("black"));
+console.log(boxElement5.classList.contains("blue"));
 console.log(boxElement5.classList.contains("white"));
 
 setTimeout(() => {
@@ -858,7 +858,8 @@ boxElement8.onclick = function (e) {
   console.log(e.target);
 };
 
-var boxElement9 = document.querySelectorAll("h2"); // nếu đặt h2 thì tất cả elenment h2 trên trang web đều bị add thuộc tínhtính, hoặc có thể đặt theo từng class riêng
+var boxElement9 = document.querySelectorAll("h2"); // nếu đặt h2 thì tất cả elenment h2
+// trên trang web đều bị add thuộc tính, hoặc có thể đặt theo từng class riêng
 // boxElement9 là nodelist giống array nên dùng vòng lặp for
 for (var i = 0; i < boxElement9.length; ++i) {
   boxElement9[i].onclick = function (e) {
@@ -875,8 +876,10 @@ var inputElement3 = document.querySelector('input[type="checkbox"] ');
 var inputElement4 = document.querySelector("select");
 var inputElement5 = document.querySelector('input[type="text3"] ');
 // onchange in ra khi gõ xong và click ra ngoài input
+
+var ketqua; // value sẽ được lưu tại biến từ nó có thể gửi đến backend
 inputElement.onchange = function (e) {
-  console.log(e.target.value);
+  console.log((ketqua = e.target.value));
 };
 // oninput gõ đến đâu in ra đến đấy
 inputElement2.oninput = function (e) {
@@ -925,7 +928,9 @@ for (var i = 0; i < aElement.length; ++i) {
   aElement[i].onclick = function (e) {
     //khi ! & href http://127.0.0.1:2/HTML/lionblog.html thì cho chuyển trang và ngược lại
     if (!e.target.href.startsWith("http://127.0.0.1:2/HTML/lionblog.html")) {
-      e.preventDefault();
+      // startsWith() dùng để check xem nó có bắt đầu bằng chuỗi gì đó không
+      e.preventDefault(); // preventDefault đùng để ngăn chặn một hành vi mặc định nào đó
+      // trong trường hợp này preventDefault không cho chuyển trang nếu sai đk
     }
   };
 }
@@ -933,13 +938,13 @@ for (var i = 0; i < aElement.length; ++i) {
 var ulElement = document.querySelector(".thanh8-ul");
 // sẽ click chuột xuống đc vào các phần tử khi focus input mà không mất
 ulElement.onmousedown = function (e) {
-  e.preventDefault();
+  e.preventDefault(); // ngăn chặn hành vi click chuột xuống
 };
 ulElement.onclick = function (e) {
   console.log(e.target);
 };
 
-// stopPropagation: loại bỏ 1 sự kiện nổi bọt
+// stopPropagation: ngăn chặn 1 sự kiện nổi bọt
 document.querySelector(".thanh9").onclick = function (e) {
   console.log("DIV");
 };
@@ -951,7 +956,7 @@ document.querySelector(".thanh10").onclick = function (e) {
 //DOM Event: sử dụng khi cHỈ có nhu cầu lắng nghe
 var domElement = document.querySelector(".thanh11");
 
-// phần add lắng nghe - và chỉ thực hiện đc 3s đầu
+// phần add lắng nghe - và CHỈ HOẠT ĐỘNG 3 GIÂY ĐẦU
 domElement.onclick = function () {
   console.log("lần 1");
   console.log("lần 2");
@@ -962,13 +967,22 @@ setTimeout(function () {
   domElement.onclick = function () {}; // ghi đè lên phần code trên bằng cách truyền vào 1 function trống
 }, 3000);
 
+// CHỈ HOẠT ĐỘNG SAU 3 GIÂY
+var domElement2 = document.querySelector(".thanhh11");
+setTimeout(function () {
+  domElement2.onclick = function () {
+    console.log("việc 1");
+    console.log("việc 2");
+    alert("việc 3");
+  };
+}, 2000);
+
 // EventListener: sử dụng khi có nhu cầu HỦY BỎ 1 sự kiện nào đó
-var domElement2 = document.querySelector(".thanh12");
+var domElement3 = document.querySelector(".thanh12");
 
-// addEventListener nhận 2 đối số (đối số 1: eventname loại bỏ chữ <on>, đối số 2: truyền 1 Function(callback))
-// domElement2.addEventListener('click', function(e) {
-
-// })
+// addEventListener nhận 2 đối số (đối số 1: eventname loại bỏ chữ <on>,
+// đối số 2: truyền 1 Function(callback))
+// domElement3.addEventListener('click', function(e) {})
 
 function viec1() {
   console.log("viec1-a");
@@ -979,11 +993,11 @@ function viec2() {
   console.log("viec2-d");
 }
 
-domElement2.addEventListener("click", viec1);
-domElement2.addEventListener("click", viec2);
+domElement3.addEventListener("click", viec1);
+domElement3.addEventListener("click", viec2);
 
 setTimeout(function () {
-  domElement2.removeEventListener("click", viec1);
+  domElement3.removeEventListener("click", viec1);
 }, 3000);
 
 // JSON: 'Number, Boolean, Null, String, Array, Object'
