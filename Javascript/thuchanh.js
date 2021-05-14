@@ -1,3 +1,4 @@
+// git sua doi 
 var myArray = ["cong thanh", "kashiwa", "tria", "alo"];
 console.log(myArray[1]);
 
