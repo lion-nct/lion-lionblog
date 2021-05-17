@@ -1,4 +1,3 @@
-// git sua doi 
 var myArray = ["cong thanh", "kashiwa", "tria", "alo"];
 console.log(myArray[1]);
 
@@ -859,7 +858,8 @@ boxElement8.onclick = function (e) {
   console.log(e.target);
 };
 
-var boxElement9 = document.querySelectorAll("h2"); // nếu đặt h2 thì tất cả elenment h2
+var boxElement9 = document.querySelectorAll("h2");
+ // nếu đặt h2 thì tất cả elenment h2
 // trên trang web đều bị add thuộc tính, hoặc có thể đặt theo từng class riêng
 // boxElement9 là nodelist giống array nên dùng vòng lặp for
 for (var i = 0; i < boxElement9.length; ++i) {
@@ -878,7 +878,7 @@ var inputElement4 = document.querySelector("select");
 var inputElement5 = document.querySelector('input[type="text3"] ');
 // onchange in ra khi gõ xong và click ra ngoài input
 
-var ketqua; // value sẽ được lưu tại biến từ nó có thể gửi đến backend
+var ketqua; // value sẽ được lưu tại biến từ đó có thể gửi đến backend
 inputElement.onchange = function (e) {
   console.log((ketqua = e.target.value));
 };
@@ -891,7 +891,8 @@ inputElement2.oninput = function (e) {
 };
 
 inputElement3.onchange = function (e) {
-  console.log(e.target.checked); //checkbox thì dùng checked sẽ trả về check = true && không check = false
+  console.log(e.target.checked);
+   //checkbox thì dùng checked sẽ trả về check = true && không check = false
 };
 
 inputElement4.onchange = function (e) {
@@ -954,8 +955,9 @@ document.querySelector(".thanh10").onclick = function (e) {
   console.log("Click Me!");
 };
 
-//DOM Event: sử dụng khi cHỈ có nhu cầu lắng nghe
+//DOM Event: sử dụng khi chỉ có nhu cầu lắng nghe
 var domElement = document.querySelector(".thanh11");
+console.log(domElement)
 
 // phần add lắng nghe - và CHỈ HOẠT ĐỘNG 3 GIÂY ĐẦU
 domElement.onclick = function () {
