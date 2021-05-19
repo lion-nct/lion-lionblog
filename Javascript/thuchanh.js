@@ -859,7 +859,7 @@ boxElement8.onclick = function (e) {
 };
 
 var boxElement9 = document.querySelectorAll("h2");
- // nếu đặt h2 thì tất cả elenment h2
+// nếu đặt h2 thì tất cả elenment h2
 // trên trang web đều bị add thuộc tính, hoặc có thể đặt theo từng class riêng
 // boxElement9 là nodelist giống array nên dùng vòng lặp for
 for (var i = 0; i < boxElement9.length; ++i) {
@@ -892,7 +892,7 @@ inputElement2.oninput = function (e) {
 
 inputElement3.onchange = function (e) {
   console.log(e.target.checked);
-   //checkbox thì dùng checked sẽ trả về check = true && không check = false
+  //checkbox thì dùng checked sẽ trả về check = true && không check = false
 };
 
 inputElement4.onchange = function (e) {
@@ -957,7 +957,7 @@ document.querySelector(".thanh10").onclick = function (e) {
 
 //DOM Event: sử dụng khi chỉ có nhu cầu lắng nghe
 var domElement = document.querySelector(".thanh11");
-console.log(domElement)
+console.log(domElement);
 
 // phần add lắng nghe - và CHỈ HOẠT ĐỘNG 3 GIÂY ĐẦU
 domElement.onclick = function () {
@@ -1003,7 +1003,9 @@ setTimeout(function () {
   domElement3.removeEventListener("click", viec1);
 }, 3000);
 
+// JSON : Javascript Object Notation
 // JSON: 'Number, Boolean, Null, String, Array, Object'
+// JSON : là định dạng kiểu dữ liệu (string)
 
 // Parse: Từ JSON --> Javascript type
 // cách tạo 1 json
