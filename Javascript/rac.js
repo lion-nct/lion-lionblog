@@ -55,7 +55,4 @@ promise
   .then(function (result) {})
   .catch(function (err) {})
   .catch(function (error) {});
-function thanh(params) {
-  console.log(a + b)
-}
-thanh(1 + 2);
+
