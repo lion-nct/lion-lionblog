@@ -239,7 +239,7 @@ for (var i = 0; i < arrayLength; i++) {
   console.log("Ngôn ngữ", myArray[i]);
 }
 
-// FOR/IN : dùng để lấy ra các key của đối tượng
+// FOR/IN : dùng để lấy ra các KEY của đối tượng
 
 var myInfo = {
   name: "Công Thành",
@@ -250,7 +250,7 @@ for (var thanh22 in myInfo) {
   console.log(myInfo[thanh22]);
 }
 
-// FOR OF : dùng để lấy ra các value của đối tượng
+// FOR OF : dùng để lấy ra các VALUE của đối tượng
 
 var language = ["Javascript", "PHP", "Ruby"];
 for (var thanh23 of language) {
@@ -262,7 +262,10 @@ var myInfo = {
   age: 23,
   address: "Kashiwa, Chiba, Japan",
 };
-console.log(Object.keys(myInfo));
+
+for (var value of Object.keys(myInfo)) {
+  console.log(myInfo[value]);
+}
 
 // WHILE
 var myInfo = ["Công Thành", "23 tuổi"];
@@ -363,7 +366,6 @@ myArray.forEach(function (thanh24, index) {
   console.log(index, thanh24);
 });
 
-
 // every: dùng để kiểm tra tất cả điều kiện trong mảng và phải thỏa mãn 1 điều kiện gì đó
 // every sẽ kiểm tra từng điều kiện nếu điều kiện sai sẽ không chạy
 // và không ktra điều kiện tiếp theo mà in ra luôn
@@ -431,7 +433,6 @@ var course = [
   },
 ];
 
-
 // MAP : dùng để chỉnh sửa hoặc thay đổi các element của một array
 // đối với map: nếu viết gì trong return thì sẽ in ra cái đó
 var newCourses = course.map(function (thanh29) {
@@ -444,7 +445,7 @@ var newCourses = course.map(function (thanh29) {
 console.log(newCourses);
 
 // REDUCED : dùng khi muốn nhận về một giá trị duy nhất (vd: nhận về tổng số coin như bên dưới)
-// reduce sẽ nhận 2 đối số truyển vào(function, giá trị khởi tạo) 
+// reduce sẽ nhận 2 đối số truyển vào(function, giá trị khởi tạo)
 // trong function truyền vào 4 tham số (bienluutru,giatrihientai,chimuccuagiatrihientai, array gốc)
 // accumulator sẽ được gán = với giá trị khởi tạo trong lần chạy đầu tiên
 
@@ -468,7 +469,7 @@ function thanh30(accumulator, currentValue, currentIndex, originArray) {
 var thanh32 = course.reduce(thanh30, 0);
 // thanh30 là 1 function nhưng viết cách khác
 // giá trị khởi tạo 0(number) sẽ được gán cho accumulator(bienluutru) và có giá trị đó luôn, trong lần chạy đầu tiên
-// giá trị khởi tạo có thể là bất cứ kiểu dữ liệu gì ví dụ : array,.... 
+// giá trị khởi tạo có thể là bất cứ kiểu dữ liệu gì ví dụ : array,....
 console.log("Tổng số coin của khóa học: ", thanh32);
 
 // Flat (làm phẳng mảng) từ Depth array (mảng sâu)
@@ -519,7 +520,7 @@ console.log(newArray);
 var thanh34 = "tôi tên là Nguyễn Công Thành";
 console.log(thanh34.includes("tên", 1));
 // truyền vào 2 giá trị include('từ khóa tìm kiếm', vị trí bắt đầu tìm kiếm)
- 
+
 var thanh35 = ["Tên", "Nguyễn", "Công", "Thành"];
 console.log(thanh35.includes("Nguyễn", 3));
 
@@ -719,7 +720,8 @@ Array.prototype.every2 = function (callback) {
   for (var index in this) {
     if (this.hasOwnProperty(index)) {
       var result = callback(this[index], index, this);
-      if (!result) { // nếu 1 lần sai thì trả về false luôn
+      if (!result) {
+        // nếu 1 lần sai thì trả về false luôn
         output = false;
         break;
       }
@@ -785,24 +787,29 @@ headingElement3.className = "headingh3";
 
 // innerText : là thuộc tính của Element Node
 // lấy ra text node được viết y chang trên trình duyệt
-// một số trường hợp được css ẩn đi text thì innerText lấy ra phần TEXT đã ẩn như trên trình duyệt
+// một số trường hợp được css ẩn đi text thì innerText lấy
+// ra phần TEXT đã ẩn như trên trình duyệt
 // ngược lại với textContent
 var headingElement = document.querySelector(".heading");
 headingElement.innerText = "Nội dung tên đã được sửa";
 console.log(headingElement);
 
-// textContent: lấy nguyên bản những Text Node có trong Element Node (trong text node viết như thế nào thì bỏ qua các thẻ và lấy ra giống như vậy)
+// textContent: lấy nguyên bản những Text Node có trong Element
+// Node (trong text node viết như thế nào thì bỏ qua các thẻ và lấy ra giống như vậy)
 // textContent có thể lấy ra các code css viết trong thẻ đó
-
 
 // innerHTML : có thể thêm Element node, Attribute node, Text node vào Element
 var boxElement = document.querySelector(".classheading");
-boxElement.innerHTML = '<h1 title = "heading"> innerHTML Thay thế các thẻ bên trong thẻ div cha</h1>'; // thêm vào trong thẻ div .classheading và thay thế các thẻ có sẵn
+boxElement.innerHTML =
+  '<h1 title = "heading"> innerHTML Thay thế các thẻ bên trong thẻ div cha</h1>';
+// thêm vào trong thẻ div .classheading và thay thế các thẻ có sẵn
 console.log(boxElement.innerHTML);
 
 // outerHTML : thay thế thẻ mới tại chính thẻ đã querySelector
 var boxElement2 = document.querySelector(".classheading2");
-boxElement2.outerHTML = '<h1 title = "heading"> outerHTML thay thế tại thẻ cha đã querySelector</h1>'; // thay thế ngay tại thẻ div.classheading2
+boxElement2.outerHTML =
+  '<h1 title = "heading"> outerHTML thay thế tại thẻ cha đã querySelector</h1>';
+// thay thế ngay tại thẻ div.classheading2
 
 // DOM CSS
 var boxElement3 = document.querySelector(".thanh1");
@@ -814,7 +821,8 @@ boxElement3.style.height = "50px";
 boxElement3.style.backgroundColor = "green";
 
 // cách viết 2 gọn hơn
-//assign nhận nhiều đối số. Đối số thứ 1 truyền Object. Đối số thứ 2 Object muốn được hợp nhấtcho Object thứ 1
+//assign nhận nhiều đối số. Đối số thứ 1 truyền Object.
+// Đối số thứ 2 Object muốn được hợp nhấtcho Object thứ 1
 Object.assign(boxElement4.style, {
   width: "100px",
   height: "50px",
@@ -1043,6 +1051,7 @@ promise
   })
   .finally(function () {
     // luôn trả về dù đúng hay sai
+
     console.log("Done!");
   });
 
@@ -1059,6 +1068,7 @@ promise2
     });
   })
   .then(function (data) {
+    // giá trị nhận được ở data là từ return phần code trước đó
     console.log(data);
     return 2;
   })
@@ -1085,6 +1095,8 @@ function sleep(ms) {
     setTimeout(resolve, ms);
   });
 }
+// sleep ở đây gọi lại function
+// và chính là 1 promise được return ở trên nên có thể .then
 sleep(4000)
   .then(function () {
     console.log(1);
@@ -1155,15 +1167,28 @@ var comment = [
     content: "Me too",
   },
   {
-    id: 2,
+    id: 3,
     user_id: 1,
     content: "ahihi",
   },
+  {
+    id: 4,
+    user_id: 3,
+    content: "meeeee tooo",
+  },
 ];
 
+// HƯỚNG BÀI TOÁN
+// muốn lấy được thông tin tên user --> bắt buộc phải gọi lên lấy comment trước
+// từ comment lấy được  user_id --> chọc vào user lấy được tên user
+// --> nên trường hợp này bắt buộc dùng callback hoặc promise lồng nhau
+
 function getComments() {
+  // để lấy dữ liệu qua API (hành động bất đồng bộ) nên ở đây ta dùng promise
   return new Promise(function (resolve, reject) {
+    // mô phỏng mạng chậm nên ở đây dùng setTimeout 1 giây
     setTimeout(function () {
+      // nên sau 1 giây thì lấy thành công dữ liệu fake comment ở trên
       resolve(comment);
     }, 1000);
   });
@@ -1171,34 +1196,46 @@ function getComments() {
 
 function getUserByIds(userIds) {
   return new Promise(function (resolve) {
+    // ở đây dùng filter để lọc các phần tử đúng -> nhận được user
     var result = users.filter(function (user) {
+      // sau đó lọc ra các user.id có trong list userIds
+      // .includes(từ khóa tìm kiếm,vị trí bắt đầu)
       return userIds.includes(user.id);
     });
     setTimeout(function () {
+      // và cuối cùng nhận lại kết quả thành công ở đây
       resolve(result);
     }, 1000);
   });
 }
 
 getComments()
+  // vì hàm getComments return 1 promise nên ở đây có thể .then và lấy được comments
   .then(function (comments) {
+    // từ hàm comments ta dùng phương thức .map chỉ cần lấy ra đúng từng user_id
     var userIds = comments.map(function (comment) {
+      // vì map return gì thì trả về đấy --> trả về 1 mảng mới chỉ lấy đúng user_id
       return comment.user_id;
     });
 
     // Promise hell
+    // trong .then phải return nên ở đây return lại getUserByIds
     return getUserByIds(userIds).then(function (users) {
       return {
         users: users,
         comments: comments,
       };
+      //console.log(users, comments);
     });
   })
+  // data nhận được dữ liệu từ return promise bên trên
   .then(function (data) {
+    //console.log(data)
     var commentBlock = document.getElementById("comment-block");
     var html = "";
     data.comments.forEach(function (comment) {
       var user = data.users.find(function (user) {
+        //console.log(user)
         return user.id === comment.user_id;
       });
       html += `<li>${user.name}: ${comment.content}</li>`;
@@ -1207,40 +1244,65 @@ getComments()
   });
 
 // Fetch/ API Server (Fake)
-var postApi = "http://localhost:3000/courses";
+var APIfake = "http://localhost:3000/khoahoc";
 
-fetch(postApi)
+// Fetch là hàm dựng sẵn và khi gọi Fetch sẽ nhận được promise nên dùng phương thức .then
+fetch(APIfake)
   .then(function (response) {
+    console.log(response);
     // trả về dữ liệu tại response, chính response là 1 Promise
-    return response.json(); // sẽ trả về 1 Promise và parse luôn => nhận đc kiểu Javascript tại đây
+    return response.json();
+    // sẽ trả về 1 Promise và parse luôn => nhận đc kiểu Javascript tại đây
   })
   // trả về 1 Promise nên =>
   .then(function (posts) {
     console.log(posts);
+  })
+  .catch(function (err) {
+    console.log("Lỗi không lấy được API");
   });
 
+//JSON server : API server(Fake)/ Mock API
+// CRUD
+//    - Create : tạo mới --> POST
+//    - Read : Lấy dữ liệu --> GET
+//    - Update : Chỉnh sửa --> PUT / PATH
+//    - Delete : Xóa --> DELETE
+//HTTP : việc truyền tải dữ liệu qua interner gọi là giao thức
+// POST,GET, PUT, PATH, DELETA : là phương thức
 // thực hành
 
-var courseApi = "http://localhost:3000/courses";
+var courseApi = "http://localhost:3000/khoahoc";
 
 function start() {
-  // cách viết tối ưu => getCourses(renderCourse)
-  getCourses(function (courses) {
-    renderCourse(courses);
-  });
+  // ở dưới là function lồng function nên cách viết tối ưu
+ getCourses(renderCourse)
+  //getCourses(renderCourse);
+
+  // cách viết thông thường
+  // getCourses(function(courses) {
+  //   console.log(courses)
+  //   // gọi renderCourse và truyền courses vào
+  //   renderCourse(courses);
+  // });
 
   handleCreateForm();
 }
 
 start();
 
-// hàm
+// Viết hàm để lấy giá trị từ API
 function getCourses(callback) {
+  console.log(callback);
   fetch(courseApi)
     .then(function (response) {
       return response.json();
     })
+    // .then(function(data){
+    //   console.log(data)
+    // })
     .then(callback);
+  console.log(callback);
 }
 
 function createCourse(data, callback) {
@@ -1249,8 +1311,11 @@ function createCourse(data, callback) {
     headers: {
       "Content-Type": "application/json",
     },
+    // lấy dữ liệu từ data truyền vào và gửi đi 
     body: JSON.stringify(data),
   };
+
+  // đối số đầu là URL, đố số 2 là 1 tùy chọn (thêm xóa sửa gì đấy)
   fetch(courseApi, options)
     .then(function (response) {
       response.json();
@@ -1280,6 +1345,7 @@ function handleDeleteCourse(id) {
     });
 }
 
+// trả lại dữ liệu sau khi lấy từ API --> callback ở trên và trả dữ liệu tại courses
 function renderCourse(courses) {
   var listCoursesBlock = document.querySelector("#list-courses");
   var htmls = courses.map(function (course) {
@@ -1507,3 +1573,10 @@ function highlight2([first, ...strings], ...value) {
 }
 const html2 = highlight2`Học lập trình ${course} tại ${brand}!`;
 console.log(html2);
+
+
+function hhh(data) {
+  c = a + b
+  console.log(data)
+}
+hhh(1,2);

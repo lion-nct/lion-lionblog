@@ -15,7 +15,7 @@ var cour2 = ["Java", "JavaScript", "PHP", "CSS", "ruby"];
 var cour2Length = cour2.length;
 
 for (var i = 0; i < cour2Length; i++) {
-    console.log(i);
+  console.log(i);
 }
 
 var cour = {
@@ -30,21 +30,32 @@ for (var key in cour) {
 }
 
 var allName = {
-    thanh: "Java 1",
-    cong: "JavaScript 2",
-    kieu: "PHP 3",
-    ngân: "CSS 4",
-}
+  thanh: "Java 1",
+  cong: "JavaScript 2",
+  kieu: "PHP 3",
+  ngân: "CSS 4",
+};
 // Object.keys(tên biến) hoặc Object.values( tên biến)
 for (var key of Object.keys(allName)) {
-    console.log(allName[key]);
+  console.log(allName[key]);
 }
 
 // reduce
 var numbers = [100, 600, 500, 600, 740, 800];
 
-var result = numbers.reduce(function(a,b){
+var result = numbers.reduce(function (a, b) {
   return a + b;
-},0);
+}, 0);
 
 console.log(result);
+
+var newPromise = new Promise(function (resolve, reject) {});
+
+promise
+  .then(function (result) {})
+  .catch(function (err) {})
+  .catch(function (error) {});
+function thanh(params) {
+  console.log(a + b)
+}
+thanh(1 + 2);
