@@ -1276,7 +1276,7 @@ var courseApi = "http://localhost:3000/khoahoc";
 
 function start() {
   // ở dưới là function lồng function nên cách viết tối ưu
- getCourses(renderCourse)
+  getCourses(renderCourse);
   //getCourses(renderCourse);
 
   // cách viết thông thường
@@ -1291,7 +1291,7 @@ function start() {
 
 start();
 
-// Viết hàm để lấy giá trị từ API
+// GET GIÁ TRỊ TỪ API
 function getCourses(callback) {
   console.log(callback);
   fetch(courseApi)
@@ -1305,50 +1305,65 @@ function getCourses(callback) {
   console.log(callback);
 }
 
+
+// TẠO GIÁ TRỊ CODE MỚI
+// ở dưới truyền 2 đối số thì trên này cũng vậy
 function createCourse(data, callback) {
   options = {
     method: "POST",
+    // thêm headers để thêm được dữ liệu vào database
     headers: {
       "Content-Type": "application/json",
     },
-    // lấy dữ liệu từ data truyền vào và gửi đi 
+    // lấy dữ liệu từ data truyền vào và gửi đi
     body: JSON.stringify(data),
   };
 
-  // đối số đầu là URL, đố số 2 là 1 tùy chọn (thêm xóa sửa gì đấy)
+  // đối số đầu là URL <phần code dưới>, 
+  // đố số 2 là 1 tùy chọn (thêm xóa sửa gì đấy)<phần code viết riêng bên trên>
   fetch(courseApi, options)
     .then(function (response) {
       response.json();
     })
+    // callback nhận lại chính dữ liệu mới ở đây
     .then(callback);
 }
 
+
+// XỬ LÍ DELETE CODE
 function handleDeleteCourse(id) {
   options = {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
+      // // 'Content-Type': 'application/x-www-form-urlencoded',
     },
   };
+  // phải có "/" nối thêm id cần xóa
   fetch(courseApi + "/" + id, options)
     .then(function (response) {
       response.json();
     })
     .then(function () {
-      getCourses(renderCourse); //xóa và render lại code luôn nhưng gọi lại API
+      // get và render lại code sau khi delete nhưng gọi lại API (refresh lại trang)
+      // getCourses(renderCourse);
 
-      // cách xóa không cần gọi lại API
-      // var courseItem = document.querySelector(".course-item-" + id)
-      // if (courseItem) {
-      //   courseItem.remove(); // xóa khỏi DOM không cần gọi lại API
-      // }
+      // cách xóa không cần gọi lại API (không refresh lại trang)
+      var courseItem = document.querySelector(".course-item-" + id)
+      if (courseItem) {
+        courseItem.remove(); // xóa khỏi DOM không cần gọi lại API
+      }
     });
 }
 
+
+// TẢI LẠI CODE MỚI
 // trả lại dữ liệu sau khi lấy từ API --> callback ở trên và trả dữ liệu tại courses
 function renderCourse(courses) {
   var listCoursesBlock = document.querySelector("#list-courses");
   var htmls = courses.map(function (course) {
+
+    // tạo 1 class="course-item-${course.id}" để phương thức DELETE bên dưới xóa đúng ID cần xóa
     return `
       <li class="course-item-${course.id}">
         <h4>${course.name}</h4>
@@ -1356,6 +1371,7 @@ function renderCourse(courses) {
         <button onclick="handleDeleteCourse(${course.id})">Xóa</button>
       </li>
       `;
+      // viết hàm handleDeleteCourse() truyền vào ${course.id} vì method DELETE xóa bằng id 
   });
   listCoursesBlock.innerHTML = htmls.join("");
 }
@@ -1364,14 +1380,18 @@ function handleCreateForm() {
   var createBtn = document.querySelector("#create");
 
   createBtn.onclick = function () {
+    // lấy giá trị nhập vào từ ô input
     var name = document.querySelector("input[name='name']").value;
     var description = document.querySelector("input[name='description']").value;
 
+    // gom lại các value đã lấy vào 1 object riêng
     var formData = {
       name: name,
       description: description,
     };
 
+    // đối số 1 tạo(gửi đi tất cả value đã lấy)
+    // đối số 2 truyền vào 1 function để render lại code mà không cần load lại trang
     createCourse(formData, function () {
       getCourses(renderCourse);
     });
@@ -1574,9 +1594,8 @@ function highlight2([first, ...strings], ...value) {
 const html2 = highlight2`Học lập trình ${course} tại ${brand}!`;
 console.log(html2);
 
-
 function hhh(data) {
-  c = a + b
-  console.log(data)
+  c = a + b;
+  console.log(data);
 }
-hhh(1,2);
+hhh(1, 2);

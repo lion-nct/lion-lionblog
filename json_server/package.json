@@ -1,14 +1,22 @@
 {
-  "name": "json_server",
+  "name": "lion-lionblog",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "json-server --watch db.json",
+    "start":"json-server --watch thuchanh.json",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lion-nct/lion-lionblog.git"
   },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lion-nct/lion-lionblog/issues"
+  },
+  "homepage": "https://github.com/lion-nct/lion-lionblog#readme",
   "dependencies": {
     "json-server": "^0.16.3"
   }
