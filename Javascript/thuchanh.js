@@ -1305,8 +1305,7 @@ function getCourses(callback) {
   console.log(callback);
 }
 
-
-// TẠO GIÁ TRỊ CODE MỚI
+// POST
 // ở dưới truyền 2 đối số thì trên này cũng vậy
 function createCourse(data, callback) {
   options = {
@@ -1319,7 +1318,7 @@ function createCourse(data, callback) {
     body: JSON.stringify(data),
   };
 
-  // đối số đầu là URL <phần code dưới>, 
+  // đối số đầu là URL <phần code dưới>,
   // đố số 2 là 1 tùy chọn (thêm xóa sửa gì đấy)<phần code viết riêng bên trên>
   fetch(courseApi, options)
     .then(function (response) {
@@ -1329,8 +1328,7 @@ function createCourse(data, callback) {
     .then(callback);
 }
 
-
-// XỬ LÍ DELETE CODE
+// DELETE
 function handleDeleteCourse(id) {
   options = {
     method: "DELETE",
@@ -1349,29 +1347,72 @@ function handleDeleteCourse(id) {
       // getCourses(renderCourse);
 
       // cách xóa không cần gọi lại API (không refresh lại trang)
-      var courseItem = document.querySelector(".course-item-" + id)
+      var courseItem = document.querySelector(".course-item-" + id);
       if (courseItem) {
         courseItem.remove(); // xóa khỏi DOM không cần gọi lại API
       }
     });
 }
 
+// PUT
+function updateCourse(id) {
+  var nameInput = document.querySelector("input[name='name']");
+  var descriptionInput = document.querySelector("input[name='description']");
 
-// TẢI LẠI CODE MỚI
+  var courseName = document.querySelector(`.course-name-${id}`).innerText;
+  var courseDescription = document.querySelector(
+    `.course-description-${id}`
+  ).innerText;
+
+  nameInput.value = courseName;
+  descriptionInput.value = courseDescription;
+
+  var createBtn = document.querySelector("#create");
+  createBtn.innerText = "SAVE";
+
+  createBtn.onclick = function () {
+    var updateData = {
+      name: nameInput.value,
+      description: descriptionInput.value,
+    };
+
+    var options = {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(updateData),
+    };
+
+    fetch(courseApi + "/" + id, options)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function () {
+        //getCourse(renderCourse);
+        var courseItem = document.querySelector(".course-item-" + id);
+      if (courseItem) {
+        courseItem.remove(); // xóa khỏi DOM không cần gọi lại API
+      }
+      });
+  };
+}
+
+// RENDER
 // trả lại dữ liệu sau khi lấy từ API --> callback ở trên và trả dữ liệu tại courses
 function renderCourse(courses) {
   var listCoursesBlock = document.querySelector("#list-courses");
   var htmls = courses.map(function (course) {
-
     // tạo 1 class="course-item-${course.id}" để phương thức DELETE bên dưới xóa đúng ID cần xóa
     return `
       <li class="course-item-${course.id}">
-        <h4>${course.name}</h4>
-        <p>${course.description}</p>
+        <h4 class="course-name-${course.id}">${course.name}</h4>
+        <p class=".course-description-${course.id}">${course.description}</p>
         <button onclick="handleDeleteCourse(${course.id})">Xóa</button>
+        <button onclick="changeCourse(${course.id})">Chỉnh sửa</button>
       </li>
       `;
-      // viết hàm handleDeleteCourse() truyền vào ${course.id} vì method DELETE xóa bằng id 
+    // viết hàm handleDeleteCourse() truyền vào ${course.id} vì method DELETE xóa bằng id
   });
   listCoursesBlock.innerHTML = htmls.join("");
 }
@@ -1393,7 +1434,11 @@ function handleCreateForm() {
     // đối số 1 tạo(gửi đi tất cả value đã lấy)
     // đối số 2 truyền vào 1 function để render lại code mà không cần load lại trang
     createCourse(formData, function () {
-      getCourses(renderCourse);
+      // getCourses(renderCourse);
+      var courseItem = document.querySelector(".course-item-" + id);
+      if (courseItem) {
+        courseItem.remove(); // xóa khỏi DOM không cần gọi lại API
+      }
     });
   };
 }
