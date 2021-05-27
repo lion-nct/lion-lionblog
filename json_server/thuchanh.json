@@ -1,3 +1,29 @@
 {
-  "khoahoc": []
+  "khoahoc": [
+    {
+      "name": "Javascript ",
+      "description": "Cơ Bản",
+      "id": 1
+    },
+    {
+      "name": "PHP",
+      "description": "Khóa Cơ Bản",
+      "id": 2
+    },
+    {
+      "name": "C++",
+      "description": "Khóa nâng cao",
+      "id": 3
+    },
+    {
+      "name": "HTML",
+      "description": "cơ bản",
+      "id": 4
+    },
+    {
+      "name": "CSS",
+      "description": "cơ bản",
+      "id": 5
+    }
+  ]
 }

@@ -1302,7 +1302,6 @@ function getCourses(callback) {
     //   console.log(data)
     // })
     .then(callback);
-  console.log(callback);
 }
 
 // POST
@@ -1354,30 +1353,28 @@ function handleDeleteCourse(id) {
     });
 }
 
-// PUT
+// PATCH
 function updateCourse(id) {
-  var nameInput = document.querySelector("input[name='name']");
-  var descriptionInput = document.querySelector("input[name='description']");
+  var newName = document.querySelector("input[name='name']");
+  var newDescription = document.querySelector("input[name='description']");
 
-  var courseName = document.querySelector(`.course-name-${id}`).innerText;
-  var courseDescription = document.querySelector(
-    `.course-description-${id}`
-  ).innerText;
+  var name = document.querySelector(".course-item-" + id);
+  var description = document.querySelector(".course-description-" + id);
 
-  nameInput.value = courseName;
-  descriptionInput.value = courseDescription;
+  newName.value = name.innerText;
+  newDescription.value = description.innerText;
 
-  var createBtn = document.querySelector("#create");
-  createBtn.innerText = "SAVE";
+  var saveBtn = document.querySelector("#create");
+  saveBtn.innerHTML = "SAVE";
 
-  createBtn.onclick = function () {
+  saveBtn.onclick = function () {
     var updateData = {
-      name: nameInput.value,
-      description: descriptionInput.value,
+      name: newName.value,
+      description: newDescription.value,
     };
 
     var options = {
-      method: "PUT",
+      method: "PATCH",
       headers: {
         "Content-Type": "application/json",
       },
@@ -1389,11 +1386,7 @@ function updateCourse(id) {
         return response.json();
       })
       .then(function () {
-        //getCourse(renderCourse);
-        var courseItem = document.querySelector(".course-item-" + id);
-      if (courseItem) {
-        courseItem.remove(); // xóa khỏi DOM không cần gọi lại API
-      }
+        getCourse(renderCourse);
       });
   };
 }
@@ -1408,8 +1401,8 @@ function renderCourse(courses) {
       <li class="course-item-${course.id}">
         <h4 class="course-name-${course.id}">${course.name}</h4>
         <p class=".course-description-${course.id}">${course.description}</p>
-        <button onclick="handleDeleteCourse(${course.id})">Xóa</button>
-        <button onclick="changeCourse(${course.id})">Chỉnh sửa</button>
+        <button onclick="handleDeleteCourse(${course.id})">DELETE</button>
+        <button onclick="updateCourse(${course.id})">EDIT</button>
       </li>
       `;
     // viết hàm handleDeleteCourse() truyền vào ${course.id} vì method DELETE xóa bằng id
@@ -1434,14 +1427,19 @@ function handleCreateForm() {
     // đối số 1 tạo(gửi đi tất cả value đã lấy)
     // đối số 2 truyền vào 1 function để render lại code mà không cần load lại trang
     createCourse(formData, function () {
-      // getCourses(renderCourse);
-      var courseItem = document.querySelector(".course-item-" + id);
-      if (courseItem) {
-        courseItem.remove(); // xóa khỏi DOM không cần gọi lại API
-      }
+      getCourses(renderCourse);
     });
   };
 }
+
+//.
+//
+//
+//
+//
+//
+//
+//
 
 // Var / Let/ Const
 
