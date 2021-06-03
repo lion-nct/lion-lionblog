@@ -40,7 +40,6 @@ console.log(thanh9);
 
 var thanh10 = ["hello", "how are you", "and you"];
 console.log(thanh10.shift());
-console.log(thanh10.shift());
 console.log(thanh10);
 // xóa đi giá trị ở đầu mảng
 
@@ -1159,12 +1158,12 @@ var comment = [
   {
     id: 1,
     user_id: 1,
-    content: "Anh yêu em nhiều lắm!",
+    content: "Chào các bạn!",
   },
   {
     id: 2,
     user_id: 2,
-    content: "Me too",
+    content: "hello",
   },
   {
     id: 3,
@@ -1174,7 +1173,7 @@ var comment = [
   {
     id: 4,
     user_id: 3,
-    content: "meeeee tooo",
+    content: "meeeee ",
   },
 ];
 
@@ -1441,10 +1440,11 @@ function handleCreateForm() {
 //
 //
 
+// ECMAScript 6+
 // Var / Let/ Const
 
 // code thuần thì dùng var
-// bable: const, let
+// thư viện bable: const, let
 // - định nghĩa biến và không gán lại thì dùng const
 // - khi cần gán lại thì dùng let
 
@@ -1457,6 +1457,8 @@ function handleCreateForm() {
 const thanh = {
   name: "Javascript",
 };
+
+// thanh = "gán lại biến ntn thì không được"
 thanh.name = "PHP";
 console.log(thanh.name); // vẫn có thể gọi ra được
 
@@ -1486,12 +1488,25 @@ const logger2 = (log) => {
 };
 logger2("đây là Arrow function");
 
+// nếu sau => mà không có (phải khác) {} thì có nghĩa là return luôn
+const sum = (a, b) => a + b;
+console.log(sum(2, 2));
+
+// viết ngắn gọn return ra Object
+// sau dấu => bắt buộc phải khác {} nên thêm ()
+const sum1 = (c, d) => ({ c: c, d: d });
+console.log(sum1(5, 2));
+
 // Class constructor
 
 // constructor function
 function Course(name, price) {
   this.name = name;
   this.price = price;
+
+  this.getname = function () {
+    return this.name;
+  };
 }
 const phpCourse = new Course("PHP", 1000);
 const jsCourse = new Course("Javascript", 1000);
@@ -1523,8 +1538,64 @@ const jsCourse1 = new Course1("Javascript", 1000);
 console.log(phpCourse1);
 console.log(jsCourse1);
 
-// Destructuring
-var array = ["Javascript", "PHP", "Ruby", "Python"];
+// Default parameter values
+
+// nếu viết 1 hàm biết tham số không bắt buộc phải nhập thì viết
+// kiểu này in ra 1 giá trị mặc định
+// viết theo kiểu bình thường
+function thanh43(log) {
+  if (typeof log === "undefined") {
+    log = "gia tri mac dinh 1";
+  }
+  console.log(log);
+}
+// không truyền giá trị sẽ in ra undefined
+thanh43();
+
+// viết ngắn gọn bằng ES6
+function thanh44(log = "gia tri mac dinh 2") {
+  console.log(log);
+}
+thanh44();
+
+//  Enhanced object literals
+// 1. Định nghĩa key: value cho object
+// 2. Định nghĩa method cho object
+// 3. Định nghĩa key cho object dưới dạng biến
+
+var khoahoc = "Javascript";
+var price = 1500;
+
+var thanh45 = {
+  // cách viết bình thường
+  // name: name,
+  // price: price
+  // getname: function() {
+  //   return name;
+  // }
+
+  //cách ngắn gọn
+  khoahoc,
+  price,
+  getname() {
+    return khoahoc;
+  },
+};
+console.log(thanh45);
+console.log(thanh45.getname());
+
+// ví dụ thêm
+var fieldName = "khóa học";
+var fieldPrice = "Giá";
+
+var thanh46 = {
+  [fieldName]: "PHP cơ bản",
+  [fieldPrice]: 1000,
+};
+console.log(thanh46);
+
+// Destructuring( phân rã ) sử dụng với array và object
+var array = ["Javascript", "PHP", "Ruby", "Python", "HTML", "CSS"];
 
 // cách viết thông thường
 a = array[0];
@@ -1536,7 +1607,9 @@ console.log(a, b, c);
 var [a, , c, d] = array;
 console.log(a, c);
 
-// cách lấy những value còn lại
+// ...rest: lấy những value còn lại
+// rest có thể đặt tên tùy ý
+// cứ kết hợp với Destructuring thì là toán tử rest
 var [a, ...rest] = array;
 console.log(rest);
 
@@ -1551,6 +1624,8 @@ var object = {
     price: 1000,
   },
 };
+
+// với object phải gọi đúng key name cần lấy
 var { name, age, ...rest } = object;
 console.log(age);
 console.log(rest);
@@ -1560,6 +1635,7 @@ var object2 = {
   age: "23 tuổi",
   year: 1998,
   address: "Kashiwa, Chiba",
+  // newKey: "cong thành",
   children: {
     name: "PHP",
     price: 1000,
@@ -1576,14 +1652,38 @@ console.log(name);
 console.log(newKey);
 
 function logger(a, ...params) {
-  // tham số truyền vào đây sẽ trở thành mảng
+  // tham số truyền vào đây sẽ trở thành ARRAY
   console.log(a);
   console.log(params);
 }
 logger(1, 2, 3, 4, 5, 6, 7, 8);
 
-// nối mảng nhanh không dùng concat()
+// lấy nhanh cách key trong object bằng Destructuring
+function thanh47({ name, age, ...rest }) {
+  console.log(name);
+  console.log(age);
+  console.log(rest);
+}
 
+thanh47({
+  name: "Công Thành",
+  age: 23,
+  address: "Kasihiwa",
+  phone: 08065826078,
+});
+
+// tương tự với mảng cũng thế
+function thanh48([a, b, ...rest]) {
+  console.log(a);
+  console.log(b);
+  console.log(rest);
+}
+thanh48([6, 8, 5, 6, 2, 6, 2, 6]);
+
+// nối mảng nhanh không dùng concat()
+// rải ... trước 1 array, object sẽ xóa đi dấu {},[]
+
+// với mảng
 var array1 = ["phần tử 1", "phần tử 2", "phần tử 3"];
 var array2 = ["phần tử 4", "phần tử 5"];
 
@@ -1610,12 +1710,27 @@ console.log(object3);
 // Spread
 var array = ["Javascript", "PHP", "Python", "HTML"];
 
-function thanh42(...rest) {
+function tria42(...rest) {
   for (var i = 0; i < rest.length; i++) {
     console.log(rest[i]);
   }
 }
-thanh42(...array);
+// rải lại array vào trong function
+tria42(...array);
+
+// ví dụ thêm
+var add1 = {
+  api: "facebook.com/thanhlion.1998",
+  name: "Công Thành",
+  age: 23,
+  add: "Kashiwa",
+};
+var add2 = {
+  ...add1,
+  // lấy lại object add1 thêm vào add2 và thay thế API mới
+  api: "facebook.com/thanhlion.108",
+};
+console.log(add2);
 
 // Tagger template literals
 
@@ -1629,6 +1744,9 @@ function highlight1(...rest) {
 const html = highlight1`Học lập trình ${course} tại ${brand} ${price} !`;
 
 function highlight2([first, ...strings], ...value) {
+  console.log(first);
+  console.log(strings);
+  console.log(value);
   return value.reduce(
     (acc, curr) => [...acc, `<span>${curr}</span>`, strings.shift()],
     [first]
@@ -1637,8 +1755,24 @@ function highlight2([first, ...strings], ...value) {
 const html2 = highlight2`Học lập trình ${course} tại ${brand}!`;
 console.log(html2);
 
-function hhh(data) {
-  c = a + b;
-  console.log(data);
+// OPTIONAL CHAINING
+const thanh49 = {
+  name: "Công Thành",
+  age: 23,
+  address1: {
+    name: "trìa 1",
+    address2: {
+      name: "trìa 2",
+      address3: {
+        name: "trìa 3",
+        address4: {
+          name: "trìa 4",
+        },
+      },
+    },
+  },
+};
+// chỉ thêm ?. khi nghi ngờ key đó có tồn tại hay không, ngoài ra thì không cần
+if (thanh49?.address1?.address2?.address3?.address4?.name) {
+  console.log(thanh49.address1.address2.address3.address4.name);
 }
-hhh(1, 2);

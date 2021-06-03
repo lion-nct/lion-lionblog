@@ -6,24 +6,29 @@
       "id": 1
     },
     {
-      "name": "PHP",
-      "description": "Khóa Cơ Bản",
-      "id": 2
-    },
-    {
       "name": "C++",
-      "description": "Khóa nâng cao",
-      "id": 3
-    },
-    {
-      "name": "HTML",
-      "description": "cơ bản",
+      "description": "C++",
       "id": 4
     },
     {
-      "name": "CSS",
-      "description": "cơ bản",
+      "name": "PHP",
+      "description": "PHP",
       "id": 5
+    },
+    {
+      "name": "CSS",
+      "description": "CSS",
+      "id": 6
+    },
+    {
+      "name": "C#",
+      "description": "C#",
+      "id": 7
+    },
+    {
+      "name": "Javascript",
+      "description": "Javascript",
+      "id": 8
     }
   ]
 }
