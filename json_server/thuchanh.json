@@ -1,34 +1,19 @@
 {
   "khoahoc": [
     {
-      "name": "Javascript ",
-      "description": "Cơ Bản",
-      "id": 1
-    },
-    {
-      "name": "C++",
-      "description": "C++",
-      "id": 4
-    },
-    {
-      "name": "PHP",
-      "description": "PHP",
+      "name": "CSS",
+      "description": "CSS",
       "id": 5
     },
     {
-      "name": "CSS",
-      "description": "CSS",
+      "name": "HTML",
+      "description": "HTML",
       "id": 6
     },
     {
-      "name": "C#",
-      "description": "C#",
+      "name": "dsd",
+      "description": "dsds",
       "id": 7
-    },
-    {
-      "name": "Javascript",
-      "description": "Javascript",
-      "id": 8
     }
   ]
 }
