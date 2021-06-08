@@ -126,7 +126,7 @@ var myInfo = {
   getName: function () {
     return this.name; //this là tên của myInfo
   },
-  getAge: function () {},
+  getAge: function () { },
 };
 delete myInfo.age;
 console.log(myInfo);
@@ -966,7 +966,7 @@ domElement.onclick = function () {
 };
 //hủy bỏ lắng nghe - sau 3s
 setTimeout(function () {
-  domElement.onclick = function () {}; // ghi đè lên phần code trên bằng cách truyền vào 1 function trống
+  domElement.onclick = function () { }; // ghi đè lên phần code trên bằng cách truyền vào 1 function trống
 }, 3000);
 
 // EventListener: sử dụng khi có nhu cầu HỦY BỎ 1 sự kiện nào đó
@@ -1529,7 +1529,7 @@ class Course1 {
     return this.price;
   }
 
-  run() {}
+  run() { }
 }
 
 const phpCourse1 = new Course1("PHP", 1000);
