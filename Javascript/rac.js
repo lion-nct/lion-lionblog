@@ -49,6 +49,7 @@ var result = numbers.reduce(function (a, b) {
 
 console.log(result);
 
+<<<<<<< HEAD
 var newPromise = new Promise(function (resolve, reject) {});
 
 promise
@@ -176,3 +177,6 @@ function handleEditCourse(id,name,discription) {
         updatebtn.hidden = true
     }
 }
+=======
+
+>>>>>>> 5a7900396fdfeae926c3b15599da008560b2e1f6
