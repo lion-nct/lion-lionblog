@@ -1,5 +1,6 @@
 const newsRouter = require("./news");
-const siteRouter = require("./site")
+const siteRouter = require("./site");
+const coursesRouter = require("./courses");
 
 // tạo ra route làm gọn file srcc/index.js
 function route(app) {
@@ -10,10 +11,7 @@ function route(app) {
   app.use("/news", newsRouter);
   app.use("/", siteRouter);
   app.use("/search", newsRouter);
-
-  app.post("/search", (req, res) => {
-    res.send("");
-  });
+  app.use("/courses", coursesRouter);
 }
 
 module.exports = route;

@@ -19,6 +19,7 @@ class SiteController {
     Course.find({})
       .then((courses) => {
         res.render("home", {
+                // dùng phương thức mutipleMongooseToObject để hiển thị được và chọc đúng tới list 
           courses: mutipleMongooseToObject(courses),
         });
       })
