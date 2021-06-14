@@ -1,18 +1,31 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="/">F8 Education</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+    <div class="container">
+        <a class="navbar-brand" href="/">F8 education</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img class="user-avatar"
+                            src="https://scontent.fkix1-2.fna.fbcdn.net/v/t1.6435-9/151660049_1733271600167011_8350112335770551676_n.jpg?_nc_cat=102&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=uC9a_Wjkr7oAX-K9jPA&tn=5H_IFbzWOHt63mxN&_nc_ht=scontent.fkix1-2.fna&oh=b05f6b8aab146210bd8597a3833a5b1f&oe=60C8CB5F"
+                            alt="">
+                        Công Thành
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/courses/create">Đăng khóa học</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/me/stored/courses">Khóa học của tôi</a>
+                        <a class="dropdown-item" href="/me/stored/news">Bài viết của tôi</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Đăng xuất</a>
+                    </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/courses/create">Đăng khóa học</a>
-                </li>
+            </ul>
         </div>
     </div>
 </nav>

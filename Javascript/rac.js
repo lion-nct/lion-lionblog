@@ -49,7 +49,6 @@ var result = numbers.reduce(function (a, b) {
 
 console.log(result);
 
-<<<<<<< HEAD
 var newPromise = new Promise(function (resolve, reject) {});
 
 promise
@@ -58,79 +57,79 @@ promise
   .catch(function (error) {});
 
 var listcoursesBlock = document.getElementById("list-courses");
-var createbtn = document.getElementById('create');
-var updatebtn = document.getElementById('update');
+var createbtn = document.getElementById("create");
+var updatebtn = document.getElementById("update");
 var inpName = document.querySelector('input[name="name"]');
 var inpdisc = document.querySelector('input[name="discription"]');
 
-createbtn.hidden = false
-updatebtn.hidden = true 
+createbtn.hidden = false;
+updatebtn.hidden = true;
 
 var coursesAPI = "http://localhost:3000/courses";
 
-function start(callback){
-    getcourse(rendercourse)
-    handleCreateForm()
+function start(callback) {
+  getcourse(rendercourse);
+  handleCreateForm();
 }
 
-start()
+start();
 
-function getcourse(callback){
-    fetch(coursesAPI)
-        .then(function(response){
-            return response.json();
-        })
-        .then(callback);
+function getcourse(callback) {
+  fetch(coursesAPI)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(callback);
 }
 
-function createcourse(data, callback){
-    var options = {
-        method : 'POST',
-        body :JSON.stringify(data),
-        headers: {
-            'Content-Type': 'application/json'
-        },
-    };
-    fetch(coursesAPI, options)
-        .then(function(response){
-            response.json();
-        })
-        .then(callback);
+function createcourse(data, callback) {
+  var options = {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+  fetch(coursesAPI, options)
+    .then(function (response) {
+      response.json();
+    })
+    .then(callback);
 }
-function handleDeleteCourse(id){
-    var options = {
-        method : 'DELETE',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-    }
-    fetch(coursesAPI + '/' + id,options)
-        .then(function(response){
-            response.json();
-        })
-        .then(function(){
-            getcourse(rendercourse);
-        })
-}
-
-function editCourse(id,data,callback){
-    var options = {
-        method : 'PUT',
-        body: JSON.stringify(data),
-        headers: {
-            'Content-Type': 'application/json'
-        },
-    }
-    fetch(coursesAPI + '/' + id,options)
-        .then(function(response){
-            response.json();
-        })
-        .then(callback)
+function handleDeleteCourse(id) {
+  var options = {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+  fetch(coursesAPI + "/" + id, options)
+    .then(function (response) {
+      response.json();
+    })
+    .then(function () {
+      getcourse(rendercourse);
+    });
 }
 
-function rendercourse(courses){
-    var htmls = courses.map(function(course){
-        return `
+function editCourse(id, data, callback) {
+  var options = {
+    method: "PUT",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+  fetch(coursesAPI + "/" + id, options)
+    .then(function (response) {
+      response.json();
+    })
+    .then(callback);
+}
+
+function rendercourse(courses) {
+  var htmls = courses.map(function (course) {
+    return `
             <li class="item-course-${course.id}">
                 <h4>${course.name}</h4>
                 <p>${course.discription}</p>
@@ -138,45 +137,44 @@ function rendercourse(courses){
                 <button onclick="handleEditCourse(${course.id},'${course.name}','${course.discription}')">Sửa</button>
             </li>
         `;
+  });
+  listcoursesBlock.innerHTML = htmls.join("");
+}
+
+function handleCreateForm() {
+  createbtn.onclick = function () {
+    var name = document.querySelector('input[name="name"]').value;
+    var discription = document.querySelector('input[name="discription"]').value;
+    var formData = {
+      name: name,
+      discription: discription,
+    };
+    createcourse(formData, function () {
+      getcourse(rendercourse);
     });
-    listcoursesBlock.innerHTML = htmls.join('');
+  };
 }
 
-function handleCreateForm (){
-    createbtn.onclick = function(){
-        var name = document.querySelector('input[name="name"]').value;
-        var discription = document.querySelector('input[name="discription"]').value;
-        var formData = {
-            name: name,
-            discription: discription
-        };
-        createcourse(formData,function(){
-            getcourse(rendercourse);
-        });
-    }
+function handleEditCourse(id, name, discription) {
+  createbtn.hidden = true;
+  updatebtn.hidden = false;
+
+  inpName.value = name;
+  inpdisc.value = discription;
+
+  updatebtn.onclick = function () {
+    var name = inpName.value;
+    var discription = inpdisc.value;
+    var formData = {
+      name: name,
+      discription: discription,
+    };
+    editCourse(id, formData, function () {
+      getcourse(rendercourse);
+    });
+    createbtn.hidden = false;
+    updatebtn.hidden = true;
+  };
 }
 
-function handleEditCourse(id,name,discription) {
-    createbtn.hidden = true
-    updatebtn.hidden = false
 
-    inpName.value = name
-    inpdisc.value = discription
-
-    updatebtn.onclick = function(){
-        var name = inpName.value;
-        var discription = inpdisc.value;
-        var formData = {
-            name : name,
-            discription : discription
-        }
-        editCourse(id,formData,function(){
-            getcourse(rendercourse)
-        })
-        createbtn.hidden = false
-        updatebtn.hidden = true
-    }
-}
-=======
-
->>>>>>> 5a7900396fdfeae926c3b15599da008560b2e1f6

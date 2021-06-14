@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 //import slug để trùng với path
 const slug = require("mongoose-slug-generator");
 
-mongoose.plugin(slug);
+const mongooseDelete = require("mongoose-delete");
 
 const Schema = mongoose.Schema;
 
@@ -23,6 +23,10 @@ const Course = new Schema(
     timestamps: true, // mặc định tự tạo ra thời gian tạo hoặc update dữ liệu
   }
 );
+
+// ADD PLUGIN
+mongoose.plugin(slug);
+Course.plugin(mongooseDelete, { deletedAt: true, overrideMethods: "all" });
 
 //Models
 module.exports = mongoose.model("Course", Course);
