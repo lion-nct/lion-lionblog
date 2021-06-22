@@ -1242,6 +1242,14 @@
   .bx {
     font-size: 22px;
   }
+
+  .bx-home-smile{
+    font-size: 23px;
+    padding: 0 0 5px 0;
+  }
+  .bxs-chevron-down{
+    font-size: 18px;
+  }
   
   .auth_form-container {
     background-color: #fff;
