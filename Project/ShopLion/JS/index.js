@@ -20,7 +20,6 @@ prevSlide = () =>
   (slide_index = slide_index - 1 < 0 ? slides.length - 1 : slide_index - 1);
 
 // pause slide when hover slider
-
 document
   .querySelector(".slider")
   .addEventListener("mouseover", () => (slide_play = false));
@@ -55,56 +54,66 @@ showSlide();
 let products = [
   {
     name: "JBL E55BT KEY BLACK",
-    image1: "./images/JBL_E55BT_KEY_BLACK_6175_FS_x1-1605x1605px.png",
-    image2: "./images/JBL_LIVE650BTNC_Product Image_Folded_Black.webp",
-    old_price: "400",
-    curr_price: "300",
+    image1:
+      "../images/thumbnails_large__default_upload_bucket_001_SEL14F18GM_1.png.png",
+    image2:
+      "../images/thumbnails_large__default_upload_bucket_003_SEL14F18GM.png.png",
+    old_price: "500",
+    curr_price: "600",
   },
   {
     name: "JBL JR 310BT",
-    image1: "./images/JBL_JR 310BT_Product Image_Hero_Skyblue.png",
-    image2: "./images/JBL_JR 310BT_Product Image_Detail_Skyblue.png",
-    old_price: "400",
-    curr_price: "300",
+    image1:
+      "../images/thumbnails_large__default_upload_bucket_SEL24F28G_0000_001_c22344c1d7a67bb6b6d60ab7c5221dd6.png.png",
+    image2:
+      "../images/thumbnails_large__default_upload_bucket_SEL24F28G_0001_002_dad050cd740e093ea20afe0bff5ea120.png.png",
+    old_price: "900",
+    curr_price: "750",
   },
   {
     name: "JBL TUNE 750BTNC",
     image1:
-      "./images/kisspng-beats-electronics-headphones-apple-beats-studio-red-headphones.png",
-    image2: "./images/JBL_E55BT_KEY_RED_6063_FS_x1-1605x1605px.webp",
-    old_price: "400",
-    curr_price: "300",
+      "../images/thumbnails_large__default_upload_bucket_SEL35F14GM_0000_001_0873f5a12fc94dde762c2a82fbe58284_2.png.png",
+    image2:
+      "../images/thumbnails_large__default_upload_bucket_SEL35F14GM_0002_003_fae7af0d714a09d1d4399169f2ebbaad_1.png.png",
+    old_price: "600",
+    curr_price: "400",
   },
   {
     name: "JBL Horizon",
-    image1: "./images/JBLHorizon_001_dvHAMaster.png",
-    image2: "./images/JBLHorizon_BLK_002_dvHAMaster.webp",
-    old_price: "400",
-    curr_price: "300",
+    image1:
+      "../images/thumbnails_large__default_upload_bucket_SEL24F28G_0000_001_c22344c1d7a67bb6b6d60ab7c5221dd6.png.png",
+    image2:
+      "../images/thumbnails_large__default_upload_bucket_SEL24F28G_0001_002_dad050cd740e093ea20afe0bff5ea120.png.png",
+    old_price: "800",
+    curr_price: "650",
   },
   {
     name: "JBL Tune 220TWS",
-    image1: "./images/JBL_TUNE220TWS_ProductImage_Pink_ChargingCaseOpen.png",
-    image2: "./images/JBL_TUNE220TWS_ProductImage_Pink_Back.png",
-    old_price: "400",
-    curr_price: "300",
+    image1:
+      "../images/thumbnails_large__default_upload_bucket_SEL35F14GM_0000_001_0873f5a12fc94dde762c2a82fbe58284_2.png.png",
+    image2:
+      "../images/thumbnails_large__default_upload_bucket_SEL35F14GM_0002_003_fae7af0d714a09d1d4399169f2ebbaad_1.png.png",
+    old_price: "750",
+    curr_price: "600",
   },
   {
     name: "UA Project Rock",
     image1:
-      "./images/190402_E1_FW19_EarbudsWCase_S13_0033-1_1605x1605_HERO.png",
+      "../images/thumbnails_large__default_upload_bucket_SEL100400GM_0000_8ff00e4b015cefaaffa2c79dccc1f65c_1.png.png",
     image2:
-      "./images/190402_E1_FW19_EarbudsWCase_S13_0033-1_1605x1605_BACK.png",
+      "../images/thumbnails_large__default_upload_bucket_SEL200600G_0000_aa4c806667bb613cd7fbc9fa6ed7c6a3_1.png.png",
     old_price: "400",
     curr_price: "300",
   },
   {
     name: "JBL Endurance SPRINT",
     image1:
-      "./images/JBL_Endurance-SPRINT_Product-Image_Red_front-1605x1605px.webp",
-    image2: "./images/JBL-Endurance-Sprint_Alt_Red-1605x1605px.webp",
-    old_price: "400",
-    curr_price: "300",
+      "../images/thumbnails_large__default_upload_bucket_001_SEL14F18GM_1.png.png",
+    image2:
+      "../images/thumbnails_large__default_upload_bucket_003_SEL14F18GM.png.png",
+    old_price: "900",
+    curr_price: "850",
   },
 ];
 
@@ -133,8 +142,8 @@ products.forEach((e) => {
                         ${e.name}
                     </div>
                     <div class="product-card-price">
-                        <span><del>${e.old_price}</del></span>
-                        <span class="curr-price">${e.curr_price}</span>
+                        <span><del>$${e.old_price}</del></span>
+                        <span class="curr-price">$${e.curr_price}</span>
                     </div>
                 </div>
             </div>
