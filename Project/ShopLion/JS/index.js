@@ -43,11 +43,11 @@ document.querySelector(".slide-prev").addEventListener("click", () => {
 
 showSlide();
 
-// setInterval(() => {
-//     if (!slide_play) return
-//     nextSlide()
-//     showSlide()
-// }, 3000);
+setInterval(() => {
+    if (!slide_play) return
+    nextSlide()
+    showSlide()
+}, 4000);
 
 // render products
 
@@ -132,10 +132,10 @@ products.forEach((e) => {
                     <div class="product-btn">
                         <button class="btn-flat btn-hover btn-shop-now">shop now</button>
                         <button class="btn-flat btn-hover btn-cart-add">
-                            <i class='bx bxs-cart-add'></i>
+                        <i class="fas fa-cart-plus"></i>
                         </button>
                         <button class="btn-flat btn-hover btn-cart-add">
-                            <i class='bx bxs-heart'></i>
+                        <i class="fas fa-heart"></i>
                         </button>
                     </div>
                     <div class="product-card-name">
