@@ -26,7 +26,6 @@ body {
   overflow-x: hidden;
   position: relative;
   background-color: var(--main-bg-color);
-  overflow-x: hidden;
 }
 
 button {
@@ -785,11 +784,11 @@ footer ul li {
 
 .group-checkbox label > i {
   position: absolute;
-  left: 2px;
-  top: -2px;
+  left: 4px;
+  top: 0px;
   color: var(--black);
   transform: scale(0);
-  font-size: 21px;
+  font-size: 16px;
   transition: transform 0.1s ease-in-out;
 }
 
