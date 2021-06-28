@@ -12,7 +12,7 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap"
         rel="stylesheet">
     <!-- boxicons -->
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/fontawesome-free-5.15.3-web/css/all.min.css">
     <!-- app css -->
     <link rel="stylesheet" href="../Css/gird.css">
     <link rel="stylesheet" href="../Css/main.css">
@@ -22,18 +22,18 @@
 
     <!-- header -->
     <header>
-        <!-- mobile menu -->
+        <!-- MOBILE MENU -->
         <div class="mobile-menu bg-second">
-            <a href="../HTML/index.html" class="mb-logo">LionShop</a>
+            <a href="./index.html" class="mb-logo">LionShop</a>
             <span class="mb-menu-toggle" id="mb-menu-toggle">
-                <i class='bx bx-menu'></i>
+                <i class="fas fa-bars"></i>
             </span>
         </div>
         <!-- end mobile menu -->
         <!-- main header -->
         <div class="header-wrapper" id="header-wrapper">
             <span class="mb-menu-toggle mb-menu-close" id="mb-menu-close">
-                <i class='bx bx-x'></i>
+                <i class="fas fa-times"></i>
             </span>
             <!-- top header -->
             <div class="bg-second">
@@ -48,17 +48,17 @@
                     </ul>
                     <ul class="devided">
                         <li class="dropdown">
-                            <a href="">USD</a>
-                            <i class='bx bxs-chevron-down'></i>
+                            <a href="">$USD</a>
+                            <i class="fas fa-angle-down"></i>
                             <ul class="dropdown-content">
-                                <li><a href="#">VND</a></li>
-                                <li><a href="#">JPY</a></li>
-                                <li><a href="#">EUR</a></li>
+                                <li><a href="#">₫VND</a></li>
+                                <li><a href="#">¥JPY</a></li>
+                                <li><a href="#">€EUR</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
                             <a href="">ENGLISH</a>
-                            <i class='bx bxs-chevron-down'></i>
+                            <i class="fas fa-angle-down"></i>
                             <ul class="dropdown-content">
                                 <li><a href="#">VIETNAMESE</a></li>
                                 <li><a href="#">JAPANESE</a></li>
@@ -74,30 +74,32 @@
             <!-- mid header -->
             <div class="bg-main">
                 <div class="mid-header container">
-                    <a href="../HTML/index.html" class="logo">LionShop</a>
+                    <a href="#" class="logo">LionShop</a>
                     <div class="search">
                         <input type="text" placeholder="Search">
-                        <i class='bx bx-search-alt'></i>
+                        <i class="fas fa-search"></i>
                     </div>
                     <ul class="user-menu">
-                        <li><a href="#"><i class='bx bx-bell'></i></a></li>
-                        <li><a href="#modul_overlay"><i class='bx bx-user-circle'></i></a></li>
-                        <li><a href="#"><i class='bx bx-cart'></i></a></li>
+                        <li><a href="#"><i class="fas fa-bell"></i></a></li>
+                        <li><a href="#modul_overlay"><i class="fas fa-user"></i></a></li>
+                        <li><a href="#"><i class="fas fa-cart-plus"></i></a></li>
                     </ul>
                 </div>
             </div>
-            <div class="modulboss">
+             <!-- signin/signup form -->
+             <div class="modulboss">
                 <div class="modul_overlay" id="modul_overlay">
                     <div class="auth_form">
                         <a href="#" class="modul_overlay-close"></a>
+                        <a href="#"><i class="fas fa-times"></i></a>
                         <div class="auth_form-container" id="auth_form-container">
                             <div class="form-container sign-up-container">
                                 <form class="auth_form-form" action="#">
                                     <h1>Create Account</h1>
                                     <div class="social-container">
-                                        <a href="#" class="social"><i class='bx bxl-facebook-circle'></i></a>
-                                        <a href="#" class="social"><i class='bx bxl-google'></i></a>
-                                        <a href="#" class="social"><i class='bx bxl-instagram'></i></i></a>
+                                        <a href="#" class="social"><i class="fab fa-facebook"></i></a>
+                                        <a href="#" class="social"><i class="fab fa-google"></i></a>
+                                        <a href="#" class="social"><i class="fab fa-instagram"></i></a>
                                     </div>
                                     <span>or use your email for registration</span>
                                     <input class="auth_form-input" type="text" placeholder="Name" />
@@ -111,10 +113,10 @@
                                     <h1>Sign in</h1>
                                     <div class="social-container">
                                         <a href="#" class="social">
-                                            <i class='bx bxl-facebook-circle'></i>
+                                            <i class="fab fa-facebook"></i>
                                         </a>
-                                        <a href="#" class="social"><i class='bx bxl-google'></i></a>
-                                        <a href="#" class="social"><i class='bx bxl-instagram'></i></i></a>
+                                        <a href="#" class="social"><i class="fab fa-google"></i></a>
+                                        <a href="#" class="social"><i class="fab fa-instagram"></i></a>
                                     </div>
                                     <span>or use your account</span>
                                     <input class="auth_form-input" type="email" placeholder="Email" />
@@ -146,10 +148,10 @@
             <div class="bg-second">
                 <div class="bottom-header container">
                     <ul class="main-menu">
-                        <li><a href="#">home</a></li>
+                        <li><a href="#"><i class="fas fa-home"></i> home</a></li>
                         <!-- mega menu -->
                         <li class="mega-dropdown">
-                            <a href="../HTML/product.html">Shop<i class='bx bxs-chevron-down'></i></a>
+                            <a href="../HTML/product.html">Shop <i class="fas fa-angle-down"></i></a>
                             <div class="mega-content">
                                 <div class="row">
                                     <div class="col-3 col-md-12">
@@ -245,7 +247,7 @@
             <div class="box">
                 <div class="breadcumb">
                     <a href="./index.html">home</a>
-                    <span><i class='bx bxs-chevrons-right'></i></span>
+                    <span><i class="fas fa-angle-double-right"></i></span>
                     <a href="./products.html">all products</a>
                 </div>
             </div>
@@ -283,7 +285,7 @@
                                         <input type="checkbox" id="status1">
                                         <label for="status1">
                                             On sale
-                                            <i class='bx bx-check'></i>
+                                            <i class="fas fa-check"></i>
                                         </label>
                                     </div>
                                 </li>
@@ -292,7 +294,7 @@
                                         <input type="checkbox" id="status2">
                                         <label for="status2">
                                             In stock
-                                            <i class='bx bx-check'></i>
+                                            <i class="fas fa-check"></i>
                                         </label>
                                     </div>
                                 </li>
@@ -301,7 +303,7 @@
                                         <input type="checkbox" id="status3">
                                         <label for="status3">
                                             Featured
-                                            <i class='bx bx-check'></i>
+                                            <i class="fas fa-check"></i>
                                         </label>
                                     </div>
                                 </li>
@@ -317,7 +319,7 @@
                                         <input type="checkbox" id="remember1" checked="checked">
                                         <label for="remember1">
                                             16-70mm
-                                            <i class='bx bx-check'></i>
+                                            <i class="fas fa-check"></i>
                                         </label>
                                     </div>
                                 </li>
@@ -326,7 +328,7 @@
                                         <input type="checkbox" id="remember2">
                                         <label for="remember2">
                                             24-70mm
-                                            <i class='bx bx-check'></i>
+                                            <i class="fas fa-check"></i>
                                         </label>
                                     </div>
                                 </li>
@@ -335,7 +337,7 @@
                                         <input type="checkbox" id="remember3">
                                         <label for="remember3">
                                             35-55mm
-                                            <i class='bx bx-check'></i>
+                                            <i class="fas fa-check"></i>
                                         </label>
                                     </div>
                                 </li>
@@ -344,7 +346,7 @@
                                         <input type="checkbox" id="remember4">
                                         <label for="remember4">
                                             16-35mm
-                                            <i class='bx bx-check'></i>
+                                            <i class="fas fa-check"></i>
                                         </label>
                                     </div>
                                 </li>
@@ -353,7 +355,7 @@
                                         <input type="checkbox" id="remember5">
                                         <label for="remember5">
                                             100-350mm
-                                            <i class='bx bx-check'></i>
+                                            <i class="fas fa-check"></i>
                                         </label>
                                     </div>
                                 </li>
@@ -369,7 +371,7 @@
                                         <input type="checkbox" id="remember1">
                                         <label for="remember1">
                                             Red
-                                            <i class='bx bx-check'></i>
+                                            <i class="fas fa-check"></i>
                                         </label>
                                     </div>
                                 </li>
@@ -378,7 +380,7 @@
                                         <input type="checkbox" id="remember2">
                                         <label for="remember2">
                                             Blue
-                                            <i class='bx bx-check'></i>
+                                            <i class="fas fa-check"></i>
                                         </label>
                                     </div>
                                 </li>
@@ -387,7 +389,7 @@
                                         <input type="checkbox" id="remember3">
                                         <label for="remember3">
                                             White
-                                            <i class='bx bx-check'></i>
+                                            <i class="fas fa-check"></i>
                                         </label>
                                     </div>
                                 </li>
@@ -396,7 +398,7 @@
                                         <input type="checkbox" id="remember4">
                                         <label for="remember4">
                                             Pink
-                                            <i class='bx bx-check'></i>
+                                            <i class="fas fa-check"></i>
                                         </label>
                                     </div>
                                 </li>
@@ -405,7 +407,7 @@
                                         <input type="checkbox" id="remember5">
                                         <label for="remember5">
                                             Yellow
-                                            <i class='bx bx-check'></i>
+                                            <i class="fas fa-check"></i>
                                         </label>
                                     </div>
                                 </li>
@@ -421,13 +423,13 @@
                                         <input type="checkbox" id="remember1">
                                         <label for="remember1">
                                             <span class="rating">
-                                                <i class='bx bxs-star'></i>
-                                                <i class='bx bxs-star'></i>
-                                                <i class='bx bxs-star'></i>
-                                                <i class='bx bxs-star'></i>
-                                                <i class='bx bxs-star'></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
                                             </span>
-                                            <i class='bx bx-check'></i>
+                                             <i class="fas fa-check"></i>
                                         </label>
                                     </div>
                                 </li>
@@ -436,13 +438,13 @@
                                         <input type="checkbox" id="remember1">
                                         <label for="remember1">
                                             <span class="rating">
-                                                <i class='bx bxs-star'></i>
-                                                <i class='bx bxs-star'></i>
-                                                <i class='bx bxs-star'></i>
-                                                <i class='bx bxs-star'></i>
-                                                <i class='bx bx-star'></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="far fa-star"></i>
                                             </span>
-                                            <i class='bx bx-check'></i>
+                                             <i class="fas fa-check"></i>
                                         </label>
                                     </div>
                                 </li>
@@ -451,13 +453,13 @@
                                         <input type="checkbox" id="remember1">
                                         <label for="remember1">
                                             <span class="rating">
-                                                <i class='bx bxs-star'></i>
-                                                <i class='bx bxs-star'></i>
-                                                <i class='bx bxs-star'></i>
-                                                <i class='bx bx-star'></i>
-                                                <i class='bx bx-star'></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                               <i class="far fa-star"></i>
+                                               <i class="far fa-star"></i>
                                             </span>
-                                            <i class='bx bx-check'></i>
+                                             <i class="fas fa-check"></i>
                                         </label>
                                     </div>
                                 </li>
@@ -466,13 +468,13 @@
                                         <input type="checkbox" id="remember1">
                                         <label for="remember1">
                                             <span class="rating">
-                                                <i class='bx bxs-star'></i>
-                                                <i class='bx bxs-star'></i>
-                                                <i class='bx bx-star'></i>
-                                                <i class='bx bx-star'></i>
-                                                <i class='bx bx-star'></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                               <i class="far fa-star"></i>
+                                               <i class="far fa-star"></i>
+                                               <i class="far fa-star"></i>
                                             </span>
-                                            <i class='bx bx-check'></i>
+                                             <i class="fas fa-check"></i>
                                         </label>
                                     </div>
                                 </li>
@@ -481,13 +483,13 @@
                                         <input type="checkbox" id="remember1">
                                         <label for="remember1">
                                             <span class="rating">
-                                                <i class='bx bxs-star'></i>
-                                                <i class='bx bx-star'></i>
-                                                <i class='bx bx-star'></i>
-                                                <i class='bx bx-star'></i>
-                                                <i class='bx bx-star'></i>
+                                                <i class="fas fa-star"></i>
+                                               <i class="far fa-star"></i>
+                                               <i class="far fa-star"></i>
+                                               <i class="far fa-star"></i>
+                                               <i class="far fa-star"></i>
                                             </span>
-                                            <i class='bx bx-check'></i>
+                                             <i class="fas fa-check"></i>
                                         </label>
                                     </div>
                                 </li>
@@ -505,13 +507,13 @@
                         <!-- NEXT PAGE -->
                         <div class="box">
                             <ul class="pagination">
-                                <li><a href="#"><i class='bx bxs-chevron-left'></i></a></li>
+                                <li><a href="#"><i class="fas fa-chevron-left"></i></a></li>
                                 <li><a href="#" class="active">1</a></li>
                                 <li><a href="#">2</a></li>
                                 <li><a href="#">3</a></li>
                                 <li><a href="#">4</a></li>
                                 <li><a href="#">5</a></li>
-                                <li><a href="#"><i class='bx bxs-chevron-right'></i></a></li>
+                                <li><a href="#"><i class="fas fa-chevron-right"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -562,16 +564,16 @@
                         </h3>
                         <ul class="contact-socials">
                             <li><a href="#">
-                                    <i class='bx bxl-facebook-circle'></i>
+                                    <i class="fab fa-facebook"></i>
                                 </a></li>
                             <li><a href="#">
-                                    <i class='bx bxl-instagram-alt'></i>
+                                <i class="fab fa-instagram"></i>
                                 </a></li>
                             <li><a href="#">
-                                    <i class='bx bxl-youtube'></i>
+                                <i class="fab fa-youtube"></i>
                                 </a></li>
                             <li><a href="#">
-                                    <i class='bx bxl-twitter'></i>
+                                <i class="fab fa-twitter"></i>
                                 </a></li>
                         </ul>
                     </div>
@@ -588,6 +590,7 @@
     <!-- app js -->
     <script src="../JS/app.js"></script>
     <script src="../JS/products.js"></script>
+    <script src="../JS/signUp.js"></script>
 </body>
 
 </html>
