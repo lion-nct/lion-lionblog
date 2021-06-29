@@ -126,10 +126,26 @@ ul.devided > li:last-child {
   z-index: 2;
 }
 
+.dropdown img{
+  position: relative;
+  width: 18px;
+  height: 9px;
 
+}
 
+.dropdown-content li {
+  position: relative;
+  display:  flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  width: 130px;
+  padding: 5px;
+}
 .dropdown-content > li > a {
-  padding: 10px;
+  display: block;
+  padding: 5px 10px;
+  text-align: left;
 }
 
 .dropdown-content > li:hover {
