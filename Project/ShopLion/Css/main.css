@@ -1,16 +1,17 @@
 :root {
   --main-bg-color: #fff;
   --second-bg-color: #f5f5f5;
-  --third-bg-color: #e3e3e3;
+  --third-bg-color: #dddddd;
   --grey: #4b4b4b;
   --black: #000;
   --red: rgb(241, 50, 50);
   --top-header-size: 30px;
   --mid-header-size: 80px;
   --bottom-header-size: 45px;
-  --btn-bg: #000;
+  --btn-bg-black: rgb(0, 0, 0);
+  --btn-bg-white: rgb(255, 255, 255);
   --btn-border-color: #000;
-  --btn-color: #fff;
+  --btn-color: rgb(255, 255, 255);
   --hover-color: rgb(245, 122, 122);
 }
 
@@ -126,16 +127,15 @@ ul.devided > li:last-child {
   z-index: 2;
 }
 
-.dropdown img{
+.dropdown img {
   position: relative;
   width: 18px;
   height: 9px;
-
 }
 
 .dropdown-content li {
   position: relative;
-  display:  flex;
+  display: flex;
   justify-content: space-between;
   align-items: center;
   text-align: left;
@@ -206,7 +206,7 @@ ul.devided > li:last-child {
   margin-right: 22px;
 }
 .user-menu > li > a:hover {
-  color: var(--hover-color)
+  color: var(--hover-color);
 }
 
 .bottom-header {
@@ -238,7 +238,7 @@ ul.devided > li:last-child {
   border-bottom: 2px solid var(--hover-color);
 }
 .main-menu a:hover {
-  color: var(--hover-color)
+  color: var(--hover-color);
 }
 
 /* mega menu */
@@ -357,7 +357,7 @@ ul.devided > li:last-child {
 .btn-flat {
   display: inline-block;
   border: 2px solid var(--btn-border-color);
-  background-color: var(--btn-bg);
+  background-color: var(--btn-bg-black);
   color: var(--btn-color);
   padding: 15px 35px;
   font-size: 15px;
@@ -372,7 +372,7 @@ ul.devided > li:last-child {
 
 .btn-hover:hover {
   background-color: var(--btn-color);
-  color: var(--btn-bg);
+  color: var(--btn-bg-black);
 }
 
 .slide-controll {
@@ -388,11 +388,11 @@ ul.devided > li:last-child {
   transition: all 0.3s cubic-bezier(0.77, 0, 0.175, 1);
 }
 .slide-controll i {
-font-size: 18px;
+  font-size: 18px;
 }
 
 .slide-controll:hover {
-  background-color: var(--btn-bg);
+  background-color: var(--btn-bg-black);
   color: var(--btn-color);
 }
 
@@ -522,11 +522,70 @@ font-size: 18px;
 
 .product-card {
   background-color: var(--main-bg-color);
+  overflow: hidden;
   transition: all 0.3s ease-in-out;
 }
 
 .product-card:hover {
   background-color: var(--second-bg-color);
+}
+
+.phanthan-list-span {
+  position: absolute;
+  background: rgb(255, 255, 255);
+  transition: 0.6s;
+}
+.phanthan-list-span{
+  background: rgb(0, 0, 0);
+}
+
+.span-ngang {
+  position: absolute;
+  width: 80%;
+}
+.span-ngang-top {
+  height: 1px;
+  width: 100%;
+  left: 0px;
+  top: -300px;
+  transform: translateX(600px);
+}
+.span-ngang-bottom {
+  height: 1px;
+  width: 100%;
+  left: 0px;
+  bottom: 0px;
+  transform: translateX(-600px);
+}
+.span-doc {
+  position: absolute;
+  height: 80%;
+}
+.doc-left {
+  width: 1px;
+  height: 410px;
+  left: 0px;
+  top: -300px;
+  transform: translateY(-600px);
+}
+.doc-right {
+  width: 1px;
+  height: 410px;
+  right: 0px;
+  bottom: 0px;
+  transform: translateY(600px);
+}
+.product-card:hover .doc-left {
+  transform: translateY(0px);
+}
+.product-card:hover .doc-right {
+  transform: translateY(0px);
+}
+.product-card:hover .span-ngang-top {
+  transform: translateX(0px);
+}
+.product-card:hover .span-ngang-bottom {
+  transform: translateX(0px);
 }
 
 .product-card-img {
@@ -628,6 +687,17 @@ font-size: 18px;
   width: 50%;
 }
 
+.blog-img {
+  padding-bottom: 26px;
+  border-bottom: 1px solid var(--grey);
+}
+
+.blog-img img,
+iframe {
+  height: 376px;
+  width: 100%;
+}
+
 .blog-info {
   padding: 50px;
 }
@@ -672,8 +742,20 @@ footer ul li {
   margin: 0 10px;
 }
 
-.contact-socials a:hover {
-  color: var(--hover-color);
+.contact-socials .fa-facebook:hover {
+  color: #248ff3;
+}
+.contact-socials .fa-instagram:hover {
+  color: #a0467d;
+}
+.contact-socials .fa-youtube:hover {
+  color: #ff0000;
+}
+.contact-socials .fa-twitter:hover {
+  color: #1da1f2;
+}
+.contact-socials .fa-envelope:hover {
+  color: #e25f2b;
 }
 
 .menu li a {
@@ -1186,7 +1268,6 @@ footer ul li {
 
 /* signIn/signUp */
 
-
 .modul_overlay {
   position: relative;
   visibility: hidden;
@@ -1287,8 +1368,8 @@ footer ul li {
 /* .fas:hover {
   color: var(--hover-color)
 } */
-.fa-angle-down{
-padding: 2px 0 0 2px;
+.fa-angle-down {
+  padding: 2px 0 0 2px;
 }
 .bxs-chevron-down {
   font-size: 18px;
@@ -1303,7 +1384,7 @@ padding: 2px 0 0 2px;
   color: var(--red);
 }
 
-.fa-home{
+.fa-home {
   font-size: 22px;
   padding: 0 2px 6px 0;
 }
@@ -1446,6 +1527,5 @@ padding: 2px 0 0 2px;
 }
 
 .social-container a:hover {
-  color: var(--hover-color)
+  color: var(--hover-color);
 }
-
