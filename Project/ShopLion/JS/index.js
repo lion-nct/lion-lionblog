@@ -43,6 +43,8 @@ document.querySelector(".slide-prev").addEventListener("click", () => {
 
 showSlide();
 
+
+// time nextSlide
 setInterval(() => {
     if (!slide_play) return
     nextSlide()
