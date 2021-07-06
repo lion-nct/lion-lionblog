@@ -90,6 +90,10 @@ document.querySelectorAll(".product-img-item").forEach((e) => {
                         <span><del>$${e.old_price}</del></span>
                         <span class="curr-price">$${e.curr_price}</span>
                     </div>
+                    <span class="product-card-info-span span-y span-y-top"></span>
+                    <span class="product-card-info-span span-y span-y-bottom"></span>
+                    <span class="product-card-info-span span-x x-left"></span>
+                    <span class="product-card-info-span span-x x-right"></span>
                 </div>
             </div>
         </div>

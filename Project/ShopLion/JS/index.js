@@ -46,9 +46,9 @@ showSlide();
 
 // time nextSlide
 setInterval(() => {
-    if (!slide_play) return
-    nextSlide()
-    showSlide()
+  if (!slide_play) return;
+  nextSlide();
+  showSlide();
 }, 4000);
 
 // render products
@@ -56,10 +56,8 @@ setInterval(() => {
 let products = [
   {
     name: "Lens Zoom G16-70mm",
-    image1:
-      "../images/bucket_001_SEL14F18GM_1.png",
-    image2:
-      "../images/bucket_003_SEL14F18GM.png",
+    image1: "../images/bucket_001_SEL14F18GM_1.png",
+    image2: "../images/bucket_003_SEL14F18GM.png",
     old_price: "500",
     curr_price: "600",
   },
@@ -110,10 +108,8 @@ let products = [
   },
   {
     name: "Lens G24-35mm",
-    image1:
-      "../images/bucket_001_SEL14F18GM_1.png",
-    image2:
-      "../images/bucket_003_SEL14F18GM.png",
+    image1: "../images/bucket_001_SEL14F18GM_1.png",
+    image2: "../images/bucket_003_SEL14F18GM.png",
     old_price: "900",
     curr_price: "850",
   },
@@ -147,6 +143,10 @@ products.forEach((e) => {
                         <span><del>$${e.old_price}</del></span>
                         <span class="curr-price">$${e.curr_price}</span>
                     </div>
+                    <span class="product-card-info-span span-y span-y-top"></span>
+                    <span class="product-card-info-span span-y span-y-bottom"></span>
+                    <span class="product-card-info-span span-x x-left"></span>
+                    <span class="product-card-info-span span-x x-right"></span>
                 </div>
             </div>
         </div>
