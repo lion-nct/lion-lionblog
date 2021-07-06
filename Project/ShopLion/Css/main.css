@@ -502,7 +502,7 @@ ul.devided > li:last-child {
 }
 
 .promotion-box:hover img {
-  transform: scale(1.1);
+  transform: scale(1.2);
 }
 
 .section {
@@ -548,29 +548,29 @@ ul.devided > li:last-child {
   width: 100%;
   left: 0px;
   top: -300px;
-  transform: translateX(600px);
+  transform: translateX(650px);
 }
 .span-y-bottom {
   height: 1px;
   width: 100%;
   left: 0px;
   bottom: 0px;
-  transform: translateX(-600px);
+  transform: translateX(-650px);
 }
 
 .x-left {
-  width: 0.5px;
-  height: 410px;
+  width: 1px;
+  height: 500px;
   left: 0px;
   top: -300px;
-  transform: translateY(-600px);
+  transform: translateY(-650px);
 }
 .x-right {
   width: 1px;
-  height: 410px;
+  height: 500px;
   right: 0px;
   bottom: 0px;
-  transform: translateY(600px);
+  transform: translateY(650px);
 }
 .product-card:hover .x-left {
   transform: translateY(0px);
@@ -1195,14 +1195,31 @@ footer ul li {
   }
 
   .slide > .img > img {
-    max-width: 300px;
+    max-width: 350px;
   }
 
-  .info-content p {
+  .info-content{
+    text-align: center;
+  }
+
+  .info-content p{
+    display: none;
+  }
+  
+  .info-content-h2{
     display: none;
   }
 
+  .info-content h3 {
+    font-size: 16px;
+  }
+  .info-content-delay {
+    transition-delay: 0.4s;
+  }
   .info-content button {
+    height: 24px;
+    padding: 4px 14px;
+    font-size: 10px;
     margin-top: unset;
   }
 
