@@ -29,7 +29,7 @@ body {
   background-color: var(--main-bg-color);
 }
 
-button {
+button, i {
   cursor: pointer;
 }
 
@@ -1076,6 +1076,9 @@ footer ul li {
 .user-rate-content {
   line-height: 25px;
 }
+.header-close-item{
+  display: none;
+}
 
 /* responsive */
 
@@ -1106,13 +1109,26 @@ footer ul li {
     font-size: 30px;
   }
 
-  .mb-menu-close {
-    display: block;
+  .fa-bars:hover{
+    color: var(--hover-color);
+  }
+  .header-close-item{
+    position: relative;
+    display:block ;
+  }
+  .header-close-item div{
     position: absolute;
-    right: 43px;
-    top: 18px;
-    z-index: 99;
+  }
+  .header-close{
+    background-color: coral;
+    position: absolute;
+    z-index: 99px;
     font-size: 25px;
+    top: 10px;
+    left: 650px;
+  }
+  .header-close:hover{
+    color: var(--hover-color);
   }
 
   .top-header {
@@ -1394,13 +1410,13 @@ footer ul li {
 .bxs-chevron-down {
   font-size: 18px;
 }
-.fa-times {
+.signup-close {
   position: relative;
   top: -250px;
   left: 790px;
   font-size: 24px;
 }
-.fa-times:hover {
+.signup-close:hover {
   color: var(--red);
 }
 

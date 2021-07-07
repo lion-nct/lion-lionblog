@@ -56,6 +56,13 @@ setInterval(() => {
 let products = [
   {
     name: "Lens Zoom G16-70mm",
+    image1: "../images/bucket_SEL100400GM_0000_8ff00e4b015cefaaffa2c79dccc1f65c_1.png",
+    image2: "../images/bucket_SEL200600G_0000_aa4c806667bb613cd7fbc9fa6ed7c6a3_1.png",
+    old_price: "350",
+    curr_price: "200",
+  },
+  {
+    name: "Lens Zoom G16-70mm",
     image1: "../images/bucket_001_SEL14F18GM_1.png",
     image2: "../images/bucket_003_SEL14F18GM.png",
     old_price: "500",
