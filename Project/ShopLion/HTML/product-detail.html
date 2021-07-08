@@ -13,25 +13,24 @@
     <!-- app css -->
     <link rel="stylesheet" href="../Css/gird.css">
     <link rel="stylesheet" href="../Css/main.css">
+    <link rel="icon" href="../images/logo.png">
 </head>
 
 <body>
 
     <!-- header -->
     <header>
-        <!-- mobile menu -->
+        <!-- MOBILE MENU -->
         <div class="mobile-menu bg-second">
             <a href="./index.html" class="mb-logo">LionShop</a>
             <span class="mb-menu-toggle" id="mb-menu-toggle">
                 <i class="fas fa-bars"></i>
+                <!-- <i class="fas header-close fa-times"></i> -->
             </span>
         </div>
         <!-- end mobile menu -->
         <!-- main header -->
         <div class="header-wrapper" id="header-wrapper">
-            <span class="mb-menu-toggle mb-menu-close" id="mb-menu-close">
-                <i class="fas fa-times"></i>
-            </span>
             <!-- top header -->
             <div class="bg-second">
                 <div class="top-header container">
@@ -40,7 +39,7 @@
                             <a href="#">080-6582-6078</a>
                         </li>
                         <li>
-                            <a href="#">thanhlion1998@gmail.com</a>
+                            <a href="#">thanhlion1998@mail.com</a>
                         </li>
                     </ul>
                     <ul class="devided">
@@ -54,13 +53,22 @@
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="">ENGLISH</a>
+                            <img src="../images/Hoa-Kỳ.png" alt="">
+                            <a href="">USA</a>
                             <i class="fas fa-angle-down"></i>
                             <ul class="dropdown-content">
-                                <li><a href="#">VIETNAMESE</a></li>
-                                <li><a href="#">JAPANESE</a></li>
-                                <li><a href="#">FRENCH</a></li>
-                                <li><a href="#">SPANISH</a></li>
+                                <li>
+                                    <img src="../images/vietnam.png" alt="">
+                                    <a href="#">VIETNAMESE</a>
+                                </li>
+                                <li>
+                                    <img src="../images/japan.png" alt="">
+                                    <a href="#">JAPANESE</a>
+                                </li>
+                                <li>
+                                    <img src="../images/franch.png" alt="">
+                                    <a href="#">FRENCH</a>
+                                </li>
                             </ul>
                         </li>
                         <li><a href="#">ORDER TRACKING</a></li>
@@ -69,6 +77,9 @@
             </div>
             <!-- end top header -->
             <!-- mid header -->
+            <div class="mb-menu-toggle header-close-item" id="mb-menu-close">
+                <div></div>
+            </div>
             <div class="bg-main">
                 <div class="mid-header container">
                     <a href="#" class="logo">LionShop</a>
@@ -77,9 +88,10 @@
                         <i class="fas fa-search"></i>
                     </div>
                     <ul class="user-menu">
+                        <li><a href="#"><i class="fas fa-shopping-bag"></i></a></li>
+                        <li><a href="#"><i class="fas fa-heart"></i></a></li>
                         <li><a href="#"><i class="fas fa-bell"></i></a></li>
                         <li><a href="#modul_overlay"><i class="fas fa-user"></i></a></li>
-                        <li><a href="#"><i class="fas fa-cart-plus"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -88,7 +100,7 @@
                 <div class="modul_overlay" id="modul_overlay">
                     <div class="auth_form">
                         <a href="#" class="modul_overlay-close"></a>
-                        <a href="#"><i class="fas fa-times"></i></a>
+                        <a href="#"><i class="fas signup-close fa-times"></i></a>
                         <div class="auth_form-container" id="auth_form-container">
                             <div class="form-container sign-up-container">
                                 <form class="auth_form-form" action="#">
@@ -140,15 +152,17 @@
                     </div>
                 </div>
             </div>
+
+
             <!-- end mid header -->
             <!-- bottom header -->
             <div class="bg-second">
                 <div class="bottom-header container">
                     <ul class="main-menu">
-                        <li><a href="#"><i class="fas fa-home"></i>home</a></li>
+                        <li><a href="#"><i class="fas fa-home"></i> home</a></li>
                         <!-- mega menu -->
                         <li class="mega-dropdown">
-                            <a href="../HTML/product.html">Shop<i class="fas fa-angle-down"></i></a>
+                            <a href="../HTML/product.html">Shop <i class="fas fa-angle-down"></i></a>
                             <div class="mega-content">
                                 <div class="row">
                                     <div class="col-3 col-md-12">
@@ -236,6 +250,8 @@
         </div>
         <!-- end main header -->
     </header>
+    <!-- end header -->
+
     <!-- end header -->
 
     <!-- product-detail content -->
