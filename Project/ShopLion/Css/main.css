@@ -29,7 +29,8 @@ body {
   background-color: var(--main-bg-color);
 }
 
-button, i {
+button,
+i {
   cursor: pointer;
 }
 
@@ -774,7 +775,6 @@ footer ul li {
 }
 
 .subscribe input:hover {
-
 }
 
 .subscribe button {
@@ -1071,7 +1071,7 @@ footer ul li {
 .user-rate-content {
   line-height: 25px;
 }
-.header-close{
+.header-close {
   display: none;
 }
 /* responsive */
@@ -1102,16 +1102,16 @@ footer ul li {
     font-size: 30px;
   }
 
-  .fa-bars:hover{
+  .fa-bars:hover {
     color: var(--hover-color);
   }
 
-  .header-close{
+  .header-close {
     display: block;
-    text-align:right;
+    text-align: right;
     padding: 18px 20px 0 0;
   }
-  .header-close:hover{
+  .header-close:hover {
     color: var(--hover-color);
   }
 
@@ -1198,15 +1198,15 @@ footer ul li {
     max-width: 350px;
   }
 
-  .info-content{
+  .info-content {
     text-align: center;
   }
 
-  .info-content p{
+  .info-content p {
     display: none;
   }
-  
-  .info-content-h2{
+
+  .info-content-h2 {
     display: none;
   }
 
@@ -1258,6 +1258,11 @@ footer ul li {
 
   .blog-img,
   .blog-info {
+    width: 100%;
+  }
+
+  .blog-img img{
+    height: auto;
     width: 100%;
   }
 
