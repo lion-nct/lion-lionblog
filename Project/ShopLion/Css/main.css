@@ -132,7 +132,6 @@ ul.devided > li:last-child {
 .dropdown-content li {
   position: relative;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   text-align: left;
   width: 130px;
@@ -140,7 +139,7 @@ ul.devided > li:last-child {
 }
 .dropdown-content > li > a {
   display: block;
-  padding: 5px 10px;
+  padding: 6px 14px;
   text-align: left;
 }
 
@@ -751,6 +750,10 @@ footer ul li {
   color: #e25f2b;
 }
 
+.footer-content > .menu, .footer-content > h3 {
+  padding-left: 100px;
+}
+
 .menu li a {
   text-transform: capitalize;
   transition: transform 0.3s ease-in-out;
@@ -1093,15 +1096,23 @@ footer ul li {
     z-index: 99;
     transition: right 0.3s ease-in-out;
   }
-
+  .footer-mobile div, .footer-mobile-contact{
+    text-align: center;
+    width: 100%;
+    flex-wrap: wrap;
+  }
   .header-wrapper.active {
     right: 0;
   }
-
+  .footer-content > .menu, .footer-content > h3 {
+    padding-left: 0px;
+  }
   .logo {
     font-size: 30px;
   }
-
+.subscribe{
+  padding-right: 150px;
+}
   .fa-bars:hover {
     color: var(--hover-color);
   }
