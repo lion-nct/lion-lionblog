@@ -800,24 +800,16 @@ console.log(headingElement);
 // innerHTML : có thể thêm Element node, Attribute node, Text node vào Element
 var boxElement = document.querySelector(".classheading");
 boxElement.innerHTML =
-<<<<<<< HEAD
   '<h1 title = "heading"> innerHTML Thay thế các thẻ bên trong thẻ div cha</h1>';
 // thêm vào trong thẻ div .classheading và thay thế các thẻ có sẵn
-=======
-  '<h1 title = "heading"> innerHTML Thay thế các thẻ bên trong thẻ div cha</h1>'; // thêm vào trong thẻ div .classheading và thay thế các thẻ có sẵn
->>>>>>> 5a7900396fdfeae926c3b15599da008560b2e1f6
 console.log(boxElement.innerHTML);
 
 // outerHTML : thay thế thẻ mới tại chính thẻ đã querySelector
 var boxElement2 = document.querySelector(".classheading2");
 boxElement2.outerHTML =
-<<<<<<< HEAD
+
   '<h1 title = "heading"> outerHTML thay thế tại thẻ cha đã querySelector</h1>';
 // thay thế ngay tại thẻ div.classheading2
-=======
-  '<h1 title = "heading"> outerHTML thay thế tại thẻ cha đã querySelector</h1>'; // thay thế ngay tại thẻ div.classheading2
->>>>>>> 5a7900396fdfeae926c3b15599da008560b2e1f6
-
 // DOM CSS
 var boxElement3 = document.querySelector(".thanh1");
 var boxElement4 = document.querySelector(".thanh2");
@@ -828,12 +820,12 @@ boxElement3.style.height = "50px";
 boxElement3.style.backgroundColor = "green";
 
 // cách viết 2 gọn hơn
-<<<<<<< HEAD
+
 //assign nhận nhiều đối số. Đối số thứ 1 truyền Object.
 // Đối số thứ 2 Object muốn được hợp nhấtcho Object thứ 1
-=======
+
 //assign nhận nhiều đối số. Đối số thứ 1 truyền Object. Đối số thứ 2 Object muốn được hợp nhất cho Object thứ 1
->>>>>>> 5a7900396fdfeae926c3b15599da008560b2e1f6
+
 Object.assign(boxElement4.style, {
   width: "100px",
   height: "50px",

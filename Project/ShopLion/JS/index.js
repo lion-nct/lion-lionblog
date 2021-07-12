@@ -162,3 +162,46 @@ products.forEach((e) => {
   product_list.insertAdjacentHTML("beforeend", prod);
   best_product_list.insertAdjacentHTML("afterbegin", prod);
 });
+
+
+let container_right_expose = document.querySelector("#container-right-expose");
+
+products.forEach((e) => {
+  let prod = `
+        <div class="col-3 col-md-6 col-sm-12 cap1">
+            <div class="product-card">
+                <div class="product-card-img">
+                    <img src="${e.image1}" alt="">
+                    <img src="${e.image2}" alt="">
+                </div>
+                <div class="product-card-info">
+                    <div class="product-btn">
+                        <button class="btn-flat btn-hover btn-shop-now">shop now</button>
+                        <button class="btn-flat btn-hover btn-cart-add">
+                        <i class="fas fa-cart-plus"></i>
+                        </button>
+                        <button class="btn-flat btn-hover btn-cart-add">
+                        <i class="fas fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="product-card-name">
+                        ${e.name}
+                    </div>
+                    <div class="product-card-price">
+                        <span><del>$${e.old_price}</del></span>
+                        <span class="curr-price">$${e.curr_price}</span>
+                    </div>
+                    <span class="product-card-info-span span-y span-y-top"></span>
+                    <span class="product-card-info-span span-y span-y-bottom"></span>
+                    <span class="product-card-info-span span-x x-left"></span>
+                    <span class="product-card-info-span span-x x-right"></span>
+                </div>
+            </div>
+        </div>
+    `;
+  container_right_expose.insertAdjacentHTML("afterbegin", prod);
+});
+
+
+
+	
