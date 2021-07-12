@@ -565,20 +565,21 @@ ul.devided > li:last-child {
   display: flex;
   flex-wrap: nowrap;
   position: absolute;
+  -webkit-animation: slide 16s ease infinite;
 }
 
 .cap1 {
-  -webkit-transform: translate3d(-686px, 0, 0);
-  transition-duration: 800ms;
+  /* -webkit-transform: translate3d(-686px, 0, 0);
+  transition-duration: 800ms; */
 }
 
-/* @-webkit-keyframes cap1 {
+@-webkit-keyframes slide {
   20% {margin-left: 0px;}
-  30% {margin-left: -728px;}
-  50% {margin-left: -728px;}
-  60% {margin-left: -1456px;}
-  80% {margin-left: -1456px;}
-} */
+  40% {margin-left: -700px;}
+  60% {margin-left: -1400px;}
+  80% {margin-left: -2100px;}
+  100% {margin-left: -2800px;}
+}
 .product-card {
   background-color: var(--main-bg-color);
   overflow: hidden;
