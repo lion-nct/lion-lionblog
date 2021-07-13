@@ -523,9 +523,6 @@ ul.devided > li:last-child {
 }
 
 /* <!-- Product list to slide --> */
-.a {
-  background-color: rgb(184, 101, 101);
-}
 .section_container {
   width: 100%;
   height: 600px;
@@ -533,9 +530,9 @@ ul.devided > li:last-child {
   margin-left: 176px;
 }
 .section_container-left {
-  background-color: rgb(68, 140, 158);
   text-align: left;
-  padding: 0 60px 0 0;
+  padding: 0 60px 0 50px;
+  background-color: rgb(192, 192, 192,0.3);
 }
 .container-left-content {
 }
@@ -551,19 +548,19 @@ ul.devided > li:last-child {
   width: 200px;
 }
 .section_container-right {
+  overflow: hidden;
   padding: 0;
-  background-color: rgb(192, 192, 192);
 }
 
-.section_container-right {
-}
 .container-right {
   width: 2800px;
   position: relative;
 }
 .container-right-expose {
   display: flex;
+  padding: 60px;
   flex-wrap: nowrap;
+  overflow: hidden;
   position: absolute;
   -webkit-animation: slide 16s ease infinite;
 }
@@ -574,11 +571,11 @@ ul.devided > li:last-child {
 }
 
 @-webkit-keyframes slide {
-  20% {margin-left: 0px;}
-  40% {margin-left: -700px;}
-  60% {margin-left: -1400px;}
-  80% {margin-left: -2100px;}
-  100% {margin-left: -2800px;}
+  20% {margin-left: -0px;}
+  40% {margin-left: -766px;}
+  60% {margin-left: -1532px;}
+  80% {margin-left: -2298px;}
+  100% {margin-left: -3064px;}
 }
 .product-card {
   background-color: var(--main-bg-color);
