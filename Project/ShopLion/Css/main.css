@@ -786,7 +786,7 @@ footer ul li {
   font-size: 38px;
 }
 
-.contact-socials {
+.contact-socials,.contact-socials-img {
   display: flex;
   justify-content: center;
 }
@@ -795,6 +795,9 @@ footer ul li {
   display: none;
   font-size: 24px;
   margin: 0 10px;
+}
+.contact-socials-img img{
+  padding: 4px;
 }
 
 .contact-socials .fa-facebook:hover {
@@ -1498,7 +1501,7 @@ footer ul li {
     font-size: 24px;
     margin: 0 10px;
   }
-  .foot-boss{
+  .foot-boss, .section_container{
     display: none;
   }
 

@@ -123,7 +123,7 @@ let products = [
 ];
 
 let product_list = document.querySelector("#latest-products");
-let best_product_list = document.querySelector("#best-products");
+// let best_product_list = document.querySelector("#best-products");
 
 products.forEach((e) => {
   let prod = `
@@ -160,7 +160,7 @@ products.forEach((e) => {
     `;
 
   product_list.insertAdjacentHTML("beforeend", prod);
-  best_product_list.insertAdjacentHTML("afterbegin", prod);
+  // best_product_list.insertAdjacentHTML("afterbegin", prod);
 });
 
 
@@ -199,7 +199,7 @@ products.forEach((e) => {
             </div>
         </div>
     `;
-  container_right_expose.insertAdjacentHTML("afterbegin", prod);
+  container_right_expose.insertAdjacentHTML("beforeend", prod);
 });
 
 
