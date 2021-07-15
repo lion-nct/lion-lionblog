@@ -603,6 +603,17 @@ ul.devided > li:last-child {
   transform: translate3d(-4000px, 0, 0);
   transition: all 20s ease 0s;
 }
+.container-right-expose2{
+  display: flex;
+  padding: 60px;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  position: absolute;
+  /* -webkit-animation: slide 16s ease infinite; */
+  width: 4000px;
+  transform: translate3d(-4000px, 0, 0);
+  transition: all 20s ease 0s;
+}
 
 .cap1 {
  
@@ -1503,12 +1514,13 @@ footer ul li {
     margin-bottom: 20px;
   }
 .container-support-bottom{
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
   text-align: center;
   border: 0;
 }
-.support-content:nth-child(1),.support-content:nth-child(2), .support-content:nth-child(3){
-  border-right: 0;
+.support-content:nth-child(2){
+  border-right:0;
 }
 
   .sp-item-info {
@@ -1825,4 +1837,9 @@ footer ul li {
 
 .social-container a:hover {
   color: var(--hover-color);
+}
+@media only screen and (max-width: 750px) {
+  .support-content:nth-child(1),.support-content:nth-child(3){
+    border-right:0;
+  }
 }

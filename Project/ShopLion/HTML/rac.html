@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/splide-2.4.21/dist/css/splide.min.css">
+
+
+    <title>Document</title>
+</head>
+<body>
+    <div class="splide">
+        <div class="splide__track">
+            <ul class="splide__list">
+                <li class="splide__slide">Slide 01</li>
+                <li class="splide__slide">Slide 02</li>
+                <li class="splide__slide">Slide 03</li>
+            </ul>
+        </div>
+        
+        <div class="splide__progress">
+            <div class="splide__progress__bar">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var splide = new Splide( '#splide' );
+
+splide.on( 'autoplay:playing', function ( rate ) {
+	console.log( rate ); // 0-1
+} );
+
+splide.mount();
+    </script>
+    <script src="/splide-2.4.21/dist/js/splide.min.js"></script>
+</body>
+</html>
