@@ -43,7 +43,6 @@ document.querySelector(".slide-prev").addEventListener("click", () => {
 
 showSlide();
 
-
 // time nextSlide
 setInterval(() => {
   if (!slide_play) return;
@@ -56,8 +55,10 @@ setInterval(() => {
 let products = [
   {
     name: "Lens Zoom G16-70mm",
-    image1: "../images/bucket_SEL100400GM_0000_8ff00e4b015cefaaffa2c79dccc1f65c_1.png",
-    image2: "../images/bucket_SEL200600G_0000_aa4c806667bb613cd7fbc9fa6ed7c6a3_1.png",
+    image1:
+      "../images/bucket_SEL100400GM_0000_8ff00e4b015cefaaffa2c79dccc1f65c_1.png",
+    image2:
+      "../images/bucket_SEL200600G_0000_aa4c806667bb613cd7fbc9fa6ed7c6a3_1.png",
     old_price: "350",
     curr_price: "200",
   },
@@ -163,7 +164,6 @@ products.forEach((e) => {
   // best_product_list.insertAdjacentHTML("afterbegin", prod);
 });
 
-
 let container_right_expose = document.querySelector("#container-right-expose");
 
 products.forEach((e) => {
@@ -202,6 +202,10 @@ products.forEach((e) => {
   container_right_expose.insertAdjacentHTML("beforeend", prod);
 });
 
+// var splide = new Splide( '#splide' );
 
+// splide.on( 'autoplay:playing', function ( rate ) {
+// 	console.log( rate ); // 0-1
+// } );
 
-	
+// splide.mount();
