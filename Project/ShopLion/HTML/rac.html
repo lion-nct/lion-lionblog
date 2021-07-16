@@ -5,35 +5,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/splide-2.4.21/dist/css/splide.min.css">
+    <style>
+        .project-area {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto 30px auto;
+            padding: 0;
+            background: #fff;
+            box-shadow: 0 1px 8px rgb(55 55 55 / 15%);
+            overflow: hidden;
+        }
 
+        .project-area .project_container ul {
+            list-style: none;
+            width: 100%;
+            display: flex;
+        }
+
+        .project-area .project_container ul li {
+            width: 20%;
+            height: 500px;
+            text-align: center;
+            border-right: 1px solid #ececec;
+        }
+    </style>
 
     <title>Document</title>
 </head>
 <body>
-    <div class="splide">
-        <div class="splide__track">
+    <div class="splide project-area">
+        <div class="splide__track project_container">
             <ul class="splide__list">
-                <li class="splide__slide">Slide 01</li>
-                <li class="splide__slide">Slide 02</li>
-                <li class="splide__slide">Slide 03</li>
+                <li class="splide__slide"><img src="../images/Alpha-Universe-Xperia-Pro-Jason-Vong-Livestream-DSC08592.jpeg" alt=""></li>
+                <li class="splide__slide"><img src="../images/Alpha-Universe-Xperia-Pro-Jason-Vong-Livestream-DSC08592.jpeg" alt=""></li>
+                <li class="splide__slide"><img src="../images/Alpha-Universe-Xperia-Pro-Jason-Vong-Livestream-DSC08592.jpeg" alt=""></li>
+                <li class="splide__slide"><img src="../images/Alpha-Universe-Xperia-Pro-Jason-Vong-Livestream-DSC08592.jpeg" alt=""></li>
+                <li class="splide__slide"><img src="../images/Alpha-Universe-Xperia-Pro-Jason-Vong-Livestream-DSC08592.jpeg" alt=""></li>
+                <li class="splide__slide"><img src="../images/Alpha-Universe-Xperia-Pro-Jason-Vong-Livestream-DSC08592.jpeg" alt=""></li>
+                <li class="splide__slide"><img src="../images/Alpha-Universe-Xperia-Pro-Jason-Vong-Livestream-DSC08592.jpeg" alt=""></li>
             </ul>
         </div>
-        
         <div class="splide__progress">
             <div class="splide__progress__bar">
             </div>
         </div>
     </div>
-
-    <script>
-        var splide = new Splide( '#splide' );
-
-splide.on( 'autoplay:playing', function ( rate ) {
-	console.log( rate ); // 0-1
-} );
-
-splide.mount();
-    </script>
     <script src="/splide-2.4.21/dist/js/splide.min.js"></script>
+    <script src="../JS/rac.js"></script>
 </body>
 </html>
