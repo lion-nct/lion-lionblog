@@ -133,7 +133,6 @@ boby {
   position: relative;
   margin: 0;
   padding: 0;
-
   list-style: none;
   display: flex;
   justify-content: space-between;
@@ -582,7 +581,7 @@ input[type="submit"]:hover {
   position: absolute;
   content: "";
   border: 16px solid;
-  border-color: black transparent transparent transparent;
+  border-color: rgb(160, 60, 60) transparent transparent transparent;
   top: 28px;
   right: 165px;
 }
