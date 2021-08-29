@@ -24,7 +24,9 @@ var thanh5 = "tôi tên là Nguyễn Công Thành";
 console.log(thanh5.toLowerCase());
 
 var thanh6 = "     tôi tên là Nguyễn Công Thành     ";
+console.log(thanh6.trim());
 console.log(thanh6.trim().length);
+
 
 // LÀM VIÊC VỚI ARRAY
 var thanh7 = ["hello", "how are you", "and you"];
@@ -33,7 +35,7 @@ console.log(thanh7.toString());
 var thanh8 = ["hello", "how are you", "and you"];
 console.log(thanh8.join(", "));
 
-var thanh9 = ["hello", "how are you", "and you"];
+var thanh9 = ["hello", "how are you", "and you","tra ve phan tu cuoi cung duoc xoa"];
 console.log(thanh9.pop());
 console.log(thanh9);
 // xóa phần tử cuối mảng và trả về chính phần tử đã xóa
@@ -63,7 +65,7 @@ console.log(thanh14.concat(thanh12));
 // hợp nhất các element của các mảng lại với nhau
 
 var thanh15 = ["hello", "how are you", "and you", "alo", "konnichiha"];
-console.log(thanh15.slice(1, 4));
+console.log(thanh15.slice(1, 5));
 // cắt 1 hoặc nhiều element của mảng
 
 function thanh16() {
