@@ -8,65 +8,74 @@ var myObject = {
 };
 console.log("myObject", myObject);
 
+//viết đầy đủ cho từ viết tắt 
 var thanh1 = "js js js js js js";
 console.log(thanh1.replace(/js/g, "Javascript"));
 
+// tìm vị trí từ khóa
 var thanh2 = "tôi tên là Nguyễn Công Thành";
 console.log(thanh2.indexOf("Công Thành"));
 
+// cắt từ vị trí..
 var thanh3 = "tôi tên là Nguyễn Công Thành";
 console.log(thanh3.slice(11));
 
+// Viết tất cả thành in hoa
 var thanh4 = "tôi tên là Nguyễn Công Thành";
 console.log(thanh4.toUpperCase());
 
+// viết tất cả thành in thường
 var thanh5 = "tôi tên là Nguyễn Công Thành";
 console.log(thanh5.toLowerCase());
 
-var thanh6 = "     tôi tên là Nguyễn Công Thành     ";
+// đếm kí tự trong biến không tính khoảng trống
+var thanh6 = "     tôi tên là Nguyễn Công Thành        ";
 console.log(thanh6.trim());
 console.log(thanh6.trim().length);
 
 
 // LÀM VIÊC VỚI ARRAY
+
+// chuyển array sang string
 var thanh7 = ["hello", "how are you", "and you"];
 console.log(thanh7.toString());
 
+// hợp các phần tử của mảng lại
 var thanh8 = ["hello", "how are you", "and you"];
 console.log(thanh8.join(", "));
 
+// xóa phần tử cuối mảng và trả về chính phần tử đã xóa
 var thanh9 = ["hello", "how are you", "and you","tra ve phan tu cuoi cung duoc xoa"];
 console.log(thanh9.pop());
 console.log(thanh9);
-// xóa phần tử cuối mảng và trả về chính phần tử đã xóa
 
+// xóa đi giá trị ở đầu mảng
 var thanh10 = ["hello", "how are you", "and you"];
 console.log(thanh10.shift());
 console.log(thanh10);
-// xóa đi giá trị ở đầu mảng
 
+// thêm các phần tử ở cuối mảng và trả về giá trị mới
 var thanh11 = ["hello", "how are you", "and you"];
 console.log(thanh11.push("cong thanh", "tria"));
 console.log(thanh11);
-// thêm các phần tử ở cuối mảng và trả về giá trị mới
 
+// thêm vào giá trị ở đầu mảng
 var thanh12 = ["hello", "how are you", "and you"];
 console.log(thanh12.unshift("My name is:", "where are you?"));
 console.log(thanh12);
-// thêm vào giá trị ở đầu mảng
 
-var thanh13 = ["hello", "how are you", "and you"];
-thanh13.splice(1, 2);
 // splice(vị trí đặt con trỏ để xóa, số lượng phần tử muốn xóa từ vị trí con trỏ, 'chèn element mới')
+var thanh13 = ["hello", "how are you", "and you"];
+thanh13.splice(1, 2,"phan tu moi");
 console.log(thanh13);
 
+// hợp nhất các element của các mảng lại với nhau
 var thanh14 = ["nguyen", "cong", "thanh"];
 console.log(thanh14.concat(thanh12));
-// hợp nhất các element của các mảng lại với nhau
 
+// cắt 1 hoặc nhiều element của mảng
 var thanh15 = ["hello", "how are you", "and you", "alo", "konnichiha"];
 console.log(thanh15.slice(1, 5));
-// cắt 1 hoặc nhiều element của mảng
 
 function thanh16() {
   // alert('Xin chào các bạn');
